@@ -13,7 +13,7 @@ public class Raphael {
 		};
 		
 		View v = new View("Test");
-		v.startActivity(a, null);
+		System.out.println(v.startActivity(a, null));
 
 	}
 

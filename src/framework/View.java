@@ -21,14 +21,17 @@ public class View extends JFrame{
 	
 		setSize(700, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 	}
 	
-	public void startActivity(Activity activity, ParameterList params){
+	public ParameterList startActivity(Activity activity, ParameterList params){
 		
-		activity.run(params);
-		removeAll();
+		ParameterList returnParams = activity.run(params);
+		mainCon.removeAll();
 		mainCon.add(activity);
 		mainCon.validate();
+		
+		return returnParams;
 		
 	}
 	

@@ -4,17 +4,59 @@ public class GameModel {
 	
 	// The Model Class to store the Applicationdata.
 	
+	// The number of pieces.
+	
+	private int pieceCount;
+	
+	
+	public int getPieceCount() {
+		return pieceCount;
+	}
+
+	public void setPieceCount(int pieceCount) {
+		this.pieceCount = pieceCount;
+	}
+
 	// The Player's name with geter's and setter's.
-	private String playersName;
+	private String playerName; 
 
-	public String getPlayersName() {
-		return playersName;
+	public String getPlayerName() {
+		return playerName;
 	}
 
-	public void setPlayersName(String playersName) {
-		this.playersName = playersName;
+	public void setPlayerName(String playersName) {
+		this.playerName = playersName;
 	}
 	
+	// The time in seconds the round takes. 
 	
+	private int roundTime;
+
+
+	public int getRoundTime() {
+		return roundTime;
+	}
+
+	public void setRoundTime(int roundTime) {
+		this.roundTime = roundTime;
+	} 
 	
+	// The difficulty influenced the mix of the pieces.
+	
+	public final static int DIFF_EASY = 0;
+	public final static int DIFF_NORMAL = 1;
+	public final static int DIFF_HARD = 2;
+	
+	private int difficulty;
+
+
+	public int getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
+	
+	//
 }

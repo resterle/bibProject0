@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
-public class GallaryModel {
+public class GalleryModel {
 	
 	// ArrayList to store the Imagepaths.
 	
@@ -14,6 +14,12 @@ public class GallaryModel {
 	
 	public int getSize(){
 		return picturePaths.size();
+	}
+	
+	// Add a Picture to the Gallery. 
+	
+	public void addImage(String path){
+		picturePaths.add(path);
 	}
 	
 	// Returns an Image at a specific index.

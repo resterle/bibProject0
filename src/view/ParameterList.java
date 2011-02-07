@@ -1,4 +1,4 @@
-package framework;
+package view;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -54,8 +54,9 @@ public class ParameterList {
 		ListIterator<String> i = keys.listIterator();
 		while(i.hasNext()){
 			String temp = i.next();
+			System.out.println(temp);
 			if(temp.equals(key))
-				return values.get(i.previousIndex()+1);
+				return values.get(i.previousIndex());
 		}
 		
 		return null;

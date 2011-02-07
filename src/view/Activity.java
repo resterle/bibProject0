@@ -1,4 +1,4 @@
-package framework;
+package view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,8 +17,14 @@ public abstract class Activity extends JPanel{
 	
 	// Overwrite this method with your own Code.
 	protected ParameterList start(){
-		JLabel jl = new JLabel("Hello World!");
+		
+		String name = (String)params.getValue("name");
+		
+		JLabel jl = new JLabel(name);
 		add(jl);
+		
+		params.addParameter("return", name+" ist cool.");
+		
 		return params;
 	}
 	

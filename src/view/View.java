@@ -1,4 +1,4 @@
-package framework;
+package view;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -13,6 +13,7 @@ public class View extends JFrame{
 	private Container mainCon;
 	
 	public View(String name){
+		
 		super(name);
 		
 		mainCon = getContentPane();

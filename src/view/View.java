@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import model.GameModel;
+import model.picsMapper;
 
 public class View extends JFrame{
 	
@@ -24,7 +25,7 @@ public class View extends JFrame{
 		super(name);
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		i = toolkit.getImage("pics/puzzle.png");
+		i = toolkit.getImage(picsMapper.BACKGROUND);
 		
 		//Bild laden veranlassen
 		MediaTracker tracker = new  MediaTracker(this);
@@ -65,7 +66,7 @@ public class View extends JFrame{
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
+		//g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
 	}
 	
 }

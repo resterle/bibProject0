@@ -30,15 +30,15 @@ public class GameModel {
 	
 	// The time in seconds the round takes. 
 	
-	private int roundTime;
+	private int starTime;
 
 
 	public int getRoundTime() {
-		return roundTime;
+		return starTime;
 	}
 
 	public void setRoundTime(int roundTime) {
-		this.roundTime = roundTime;
+		this.starTime = roundTime;
 	} 
 	
 	// The difficulty influenced the mix of the pieces.
@@ -57,6 +57,4 @@ public class GameModel {
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
 	}
-	
-	//
 }

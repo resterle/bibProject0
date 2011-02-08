@@ -16,7 +16,7 @@ public abstract class Activity extends JPanel{
 	}
 	
 	// Overwrite this method with your own Code.
-	protected ParameterList start(){
+	public ParameterList start(){
 		
 		String name = (String)params.getValue("name");
 		

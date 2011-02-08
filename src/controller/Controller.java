@@ -1,5 +1,6 @@
 package controller;
 
+import activities.MenuActivity;
 import view.View;
 import model.GameModel;
 
@@ -19,6 +20,10 @@ public class Controller {
 	}
 	
 	public void start(){
+		
+		// Start the menuActivity.
+		
+		view.startActivity(new MenuActivity(), null);
 		
 	}
 	

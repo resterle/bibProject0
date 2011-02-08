@@ -20,7 +20,7 @@ public class QuitActivity extends Activity {
 
 	public void start() {
 		
-		setLayout(new GridLayout(5, 1));
+		setLayout(new GridLayout(2, 1));
 	
 		JButton newNoB = new JButton("No");
 		newNoB.addActionListener(new ActionListener() {
@@ -31,6 +31,7 @@ public class QuitActivity extends Activity {
 				returnData();
 			}
 		});
+		add(newNoB);
 		
 		JButton newYesB = new JButton("Yes");
 		newYesB.addActionListener(new ActionListener() {
@@ -41,6 +42,7 @@ public class QuitActivity extends Activity {
 				returnData();
 			}
 		});
+		add(newYesB);
 	}
 	
 	

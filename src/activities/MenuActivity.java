@@ -1,14 +1,82 @@
 package activities;
 
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+import model.MainMenuModel;
+
+import controller.Controller;
+
 import view.Activity;
-import view.ParameterList;
 
 public class MenuActivity extends Activity {
 	
+	
+
+	public MenuActivity(Controller controller) {
+		super(controller);
+	}
+
 	@Override
-	public ParameterList start() {
+	public void start() {
 		
-		return null;
+		setLayout(new GridLayout(5, 1));
+		
+		JButton newGameB = new JButton("new Game");
+		newGameB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter("menu", MainMenuModel.NEW_GAME);
+				returnData();
+			}
+		});
+		add(newGameB);
+		
+		JButton highscoreB = new JButton("Highscore");
+		highscoreB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter("menu", MainMenuModel.HIGHSCORE);
+			}
+		});
+		add(highscoreB);
+		
+		JButton optionsB = new JButton("Options");
+		optionsB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter("menu", MainMenuModel.OPTIONS);
+			}
+		});
+		add(optionsB);
+		
+		JButton creditsB = new JButton("credits");
+		creditsB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter("menu", MainMenuModel.CREDITS);
+			}
+		});
+		add(creditsB);
+		
+		JButton quitB = new JButton("Quit");
+		quitB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter("menu", MainMenuModel.QUIT);
+			}
+		});
+		
+		add(quitB);
+			
 	}
 	
 	

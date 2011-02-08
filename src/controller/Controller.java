@@ -1,6 +1,7 @@
 package controller;
 
 import activities.MenuActivity;
+import view.ParameterList;
 import view.View;
 import model.GameModel;
 
@@ -23,7 +24,14 @@ public class Controller {
 		
 		// Start the menuActivity.
 		
-		view.startActivity(new MenuActivity(), null);
+		view.startActivity(new MenuActivity(this), null);
+		
+	}
+	
+	public void returnData(String activityClass, ParameterList params){
+		
+		if(activityClass.equals(MenuActivity.class.getSimpleName()))
+			System.out.println((Integer)params.getValue("menu"));
 		
 	}
 	

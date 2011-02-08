@@ -25,14 +25,12 @@ public class View extends JFrame{
 		setVisible(true);
 	}
 	
-	public ParameterList startActivity(Activity activity, ParameterList params){
+	public void startActivity(Activity activity, ParameterList params){
 		
-		ParameterList returnParams = activity.run(params);
+		activity.run(params);
 		mainCon.removeAll();
 		mainCon.add(activity);
 		mainCon.validate();
-		
-		return returnParams;
 		
 	}
 	

@@ -1,23 +1,23 @@
 package test;
 
+import model.GameModel;
+import controller.Controller;
+import activities.MenuActivity;
 import view.Activity;
 import view.ParameterList;
 import view.View;
 
-public class Raphael {
+public class Raphael{
+
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Activity a = new Activity() {
-		};
 		
-		ParameterList pl = new ParameterList();
-		pl.addParameter("name", "Peter");
+		Controller con = new Controller(new GameModel(), new View("Test"));
+		con.start();
 		
-		View v = new View("nein");
-		System.out.println(v.startActivity(a, pl).getValue("return"));
 
 	}
 

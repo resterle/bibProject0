@@ -34,11 +34,9 @@ public abstract class Activity extends JPanel{
 	public void start(){
 		
 		String name = (String)params.getValue("name");
-		
 		JLabel jl = new JLabel(name);
 		add(jl);
-		
-		
+			
 	}
 	
 	protected void returnData() {

@@ -15,17 +15,19 @@ public class QuitActivity extends Activity {
 
 	public QuitActivity(Controller controller) {
 		super(controller);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void start() {
 		
+		//GridLayout with 2 Buttons
 		setLayout(new GridLayout(2, 1));
 	
+		//Button No
 		JButton newNoB = new JButton("No");
 		newNoB.addActionListener(new ActionListener() {
 			
-			@Override
+			//The Button No returns a false
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("quit", false);
 				returnData();
@@ -33,10 +35,11 @@ public class QuitActivity extends Activity {
 		});
 		add(newNoB);
 		
+		//Button Yes
 		JButton newYesB = new JButton("Yes");
 		newYesB.addActionListener(new ActionListener() {
 			
-			@Override
+			//The Button Yes returns a true
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("quit", true);
 				returnData();

@@ -1,5 +1,6 @@
 package controller;
 
+import activities.CreditsActivity;
 import activities.MenuActivity;
 import activities.QuitActivity;
 import view.ParameterList;
@@ -41,6 +42,7 @@ public class Controller {
 				case MainMenuModel.OPTIONS:
 					break;
 				case MainMenuModel.CREDITS:
+					view.startActivity(new CreditsActivity(this), null);
 					break;
 				case MainMenuModel.QUIT:
 					view.startActivity(new QuitActivity(this), null);
@@ -53,6 +55,9 @@ public class Controller {
 				System.exit(0);
 			start();
 		}
+		
+		else if(activityClass.equals(CreditsActivity.class.getSimpleName()))
+			start();
 		
 	}
 	

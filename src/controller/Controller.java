@@ -30,7 +30,7 @@ public class Controller {
 	
 	public void returnData(String activityClass, ParameterList params){
 		
-		if(activityClass.equals(MenuActivity.class.getSimpleName()))
+		if(activityClass.equals(MenuActivity.class.getSimpleName()))			
 			System.out.println((Integer)params.getValue("menu"));
 		
 	}

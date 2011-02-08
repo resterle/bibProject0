@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import activities.CreditsActivity;
 import activities.HighscoreActivity;
 import activities.MenuActivity;
+import activities.OptionsActivity;
 import activities.QuitActivity;
 import view.ParameterList;
 import view.View;
@@ -37,7 +38,7 @@ public class Controller {
 	public void returnData(String activityClass, ParameterList params){
 		
 		if(activityClass.equals(MenuActivity.class.getSimpleName())){
-			switch((Integer)params.getValue("menu")){
+			switch((Integer)params.getValue(MenuActivity.PARAM_MENUITEM)){
 				case MainMenuModel.NEW_GAME:
 					break;
 				case MainMenuModel.HIGHSCORE:
@@ -58,6 +59,7 @@ public class Controller {
 					view.startActivity(new HighscoreActivity(this), p);
 					break;
 				case MainMenuModel.OPTIONS:
+					view.startActivity(new OptionsActivity(this), null);
 					break;
 				case MainMenuModel.CREDITS:
 					view.startActivity(new CreditsActivity(this), null);
@@ -69,7 +71,7 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(QuitActivity.class.getSimpleName())){
-			if((Boolean)params.getValue("quit"))
+			if((Boolean)params.getValue(QuitActivity.PARAM_QUIT))
 				System.exit(0);
 			start();
 		}

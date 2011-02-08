@@ -16,7 +16,7 @@ import view.Activity;
 
 public class MenuActivity extends Activity {
 	
-	
+	public static final String PARAM_MENUITEM = "menuitem";
 
 	public MenuActivity(Controller controller) {
 		super(controller);
@@ -32,7 +32,7 @@ public class MenuActivity extends Activity {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter("menu", MainMenuModel.NEW_GAME);
+				returnParams.addParameter(PARAM_MENUITEM, MainMenuModel.NEW_GAME);
 				returnData();
 			}
 		});
@@ -43,7 +43,7 @@ public class MenuActivity extends Activity {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter("menu", MainMenuModel.HIGHSCORE);
+				returnParams.addParameter(PARAM_MENUITEM, MainMenuModel.HIGHSCORE);
 				returnData();
 			}
 		});
@@ -54,7 +54,7 @@ public class MenuActivity extends Activity {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter("menu", MainMenuModel.OPTIONS);
+				returnParams.addParameter(PARAM_MENUITEM, MainMenuModel.OPTIONS);
 				returnData();
 			}
 		});
@@ -65,7 +65,7 @@ public class MenuActivity extends Activity {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter("menu", MainMenuModel.CREDITS);
+				returnParams.addParameter(PARAM_MENUITEM, MainMenuModel.CREDITS);
 				returnData();
 			}
 		});
@@ -76,7 +76,7 @@ public class MenuActivity extends Activity {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter("menu", MainMenuModel.QUIT);
+				returnParams.addParameter(PARAM_MENUITEM, MainMenuModel.QUIT);
 				returnData();
 			}
 		});

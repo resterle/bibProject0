@@ -54,7 +54,6 @@ public class ParameterList {
 		ListIterator<String> i = keys.listIterator();
 		while(i.hasNext()){
 			String temp = i.next();
-			System.out.println(temp);
 			if(temp.equals(key))
 				return values.get(i.previousIndex());
 		}

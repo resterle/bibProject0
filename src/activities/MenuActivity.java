@@ -42,6 +42,7 @@ public class MenuActivity extends Activity {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("menu", MainMenuModel.HIGHSCORE);
+				returnData();
 			}
 		});
 		add(highscoreB);
@@ -52,6 +53,7 @@ public class MenuActivity extends Activity {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("menu", MainMenuModel.OPTIONS);
+				returnData();
 			}
 		});
 		add(optionsB);
@@ -62,6 +64,7 @@ public class MenuActivity extends Activity {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("menu", MainMenuModel.CREDITS);
+				returnData();
 			}
 		});
 		add(creditsB);
@@ -72,6 +75,7 @@ public class MenuActivity extends Activity {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				returnParams.addParameter("menu", MainMenuModel.QUIT);
+				returnData();
 			}
 		});
 		

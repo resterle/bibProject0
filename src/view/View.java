@@ -20,7 +20,7 @@ public class View extends JFrame{
 		
 		// Set default Windowparameters.
 	
-		setSize(700, 500);
+		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}

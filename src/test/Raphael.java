@@ -17,7 +17,6 @@ public class Raphael{
 		
 		Controller con = new Controller(new GameModel(), new View("Test"));
 		con.start();
-		
 
 	}
 

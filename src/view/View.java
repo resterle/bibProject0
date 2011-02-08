@@ -25,6 +25,8 @@ public class View extends JFrame{
 		setVisible(true);
 	}
 	
+	// Method to start an Activity.
+	
 	public void startActivity(Activity activity, ParameterList params){
 		
 		activity.run(params);
@@ -32,6 +34,10 @@ public class View extends JFrame{
 		mainCon.add(activity);
 		mainCon.validate();
 		
+	}
+	
+	public void update(){
+		mainCon.validate();
 	}
 	
 }

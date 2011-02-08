@@ -1,9 +1,11 @@
 package controller;
 
 import activities.MenuActivity;
+import activities.QuitActivity;
 import view.ParameterList;
 import view.View;
 import model.GameModel;
+import model.MainMenuModel;
 
 public class Controller {
 	
@@ -30,8 +32,27 @@ public class Controller {
 	
 	public void returnData(String activityClass, ParameterList params){
 		
-		if(activityClass.equals(MenuActivity.class.getSimpleName()))
-			System.out.println((Integer)params.getValue("menu"));
+		if(activityClass.equals(MenuActivity.class.getSimpleName())){
+			switch((Integer)params.getValue("menu")){
+				case MainMenuModel.NEW_GAME:
+					break;
+				case MainMenuModel.HIGHSCORE:
+					break;
+				case MainMenuModel.OPTIONS:
+					break;
+				case MainMenuModel.CREDITS:
+					break;
+				case MainMenuModel.QUIT:
+					view.startActivity(new QuitActivity(this), null);
+					break;
+			}
+		}
+		
+		else if(activityClass.equals(QuitActivity.class.getSimpleName())){
+			if((Boolean)params.getValue("quit"))
+				System.exit(0);
+			start();
+		}
 		
 	}
 	

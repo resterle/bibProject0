@@ -9,15 +9,16 @@ public class PicsMapper {
 	private static final String PUZZLE_PICS_PATH = path+"puzzlePics/";
 	//Pictures Array
 	public static final String[] PUZZLE_PICS = {
-		PUZZLE_PICS_PATH+"audi.jpg",
-		PUZZLE_PICS_PATH+"cooper.jpg",
-		PUZZLE_PICS_PATH+"face.jpg",
-		PUZZLE_PICS_PATH+"flower.jpg",
-		PUZZLE_PICS_PATH+"joker.jpg",
-		PUZZLE_PICS_PATH+"kiss.jpg",
-		PUZZLE_PICS_PATH+"music.jpg",
-		PUZZLE_PICS_PATH+"queen.jpg",
-		PUZZLE_PICS_PATH+"silicon_chip.jpg"
+		PUZZLE_PICS_PATH+"bum.jpg",
+		PUZZLE_PICS_PATH+"car1.jpg",
+		PUZZLE_PICS_PATH+"FG.jpg",
+		PUZZLE_PICS_PATH+"girl.jpg",
+		PUZZLE_PICS_PATH+"himmel.jpg",
+		PUZZLE_PICS_PATH+"la.jpg",
+		PUZZLE_PICS_PATH+"nv.jpg",
+		PUZZLE_PICS_PATH+"pol.jpg",
+		PUZZLE_PICS_PATH+"silicon_chip.jpg",
+		PUZZLE_PICS_PATH+"simp.jpg"
 		
 	};
 	

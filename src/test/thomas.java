@@ -5,6 +5,7 @@ import controller.Controller;
 import activities.CreditsActivity;
 import activities.MenuActivity;
 import activities.OptionsActivity;
+import activities.PlayernameActivity;
 import activities.QuitActivity;
 import activities.WonActivity;
 import view.Activity;
@@ -15,12 +16,12 @@ public class thomas {
 	
 public static void main(String[] args) {
 		ParameterList params = new ParameterList();
-		params.addParameter("name", "Thomas");
-		params.addParameter("time", "120s");
+		params.addParameter(PlayernameActivity.PARAMS_NAME, null);
+
 	
 	
-		View v = new View("Options");
-		v.startActivity(new OptionsActivity(null), null);
+		View v = new View("PlayerName");
+		v.startActivity(new PlayernameActivity(null), params);
 	}
 
 }

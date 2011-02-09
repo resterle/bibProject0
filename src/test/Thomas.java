@@ -2,6 +2,7 @@ package test;
 
 import model.GameModel;
 import controller.Controller;
+import activities.ChoosePicActivity;
 import activities.CreditsActivity;
 import activities.MenuActivity;
 import activities.OptionsActivity;
@@ -21,7 +22,7 @@ public static void main(String[] args) {
 	
 	
 		View v = new View("PlayerName");
-		v.startActivity(new PlayernameActivity(null), params);
+		v.startActivity(new ChoosePicActivity(null), null);
 	}
 
 }

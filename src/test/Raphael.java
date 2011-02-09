@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import model.GalleryModel;
 import model.GameModel;
-import model.picsMapper;
+import model.PicsMapper;
 import view.View;
 import controller.Controller;
 
@@ -19,7 +19,7 @@ public class Raphael{
 		
 		View v = new View("Test-Raphael");
 		
-		GalleryModel gm = new GalleryModel(new ArrayList(Arrays.asList(picsMapper.PUZZLE_PICS)));
+		GalleryModel gm = new GalleryModel(new ArrayList(Arrays.asList(PicsMapper.PUZZLE_PICS)));
 		
 		
 		Controller con = new Controller(new GameModel(), v, gm);

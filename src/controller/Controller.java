@@ -42,7 +42,7 @@ public class Controller {
 		
 	}
 	
-	public void returnData(String activityClass, ParameterList params){
+
 	// This Method is called by the Activities when Activity wants to return data.
 	
 	public void returnData(String activityClass, ParameterList params){
@@ -72,8 +72,8 @@ public class Controller {
 					i.add(120);
 					
 					ParameterList p = new ParameterList();
-					p.addParameter("users", s);
-					p.addParameter("scores", i);
+					p.addParameter(HighscoreActivity.PARAM_USERS, s);
+					p.addParameter(HighscoreActivity.PARAM_SCORES, i);
 					
 					view.startActivity(new HighscoreActivity(this), p);
 					break;

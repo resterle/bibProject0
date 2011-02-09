@@ -4,7 +4,7 @@ public class PicsMapper {
 	
 	private static String path = "pics/";
 	
-	public static final String BACKGROUND = path+"puzzle.png";
+	public static final String BACKGROUND = path+"background/puzzle.png";
 	
 	private static final String PUZZLE_PICS_PATH = path+"puzzlePics/";
 	//Pictures Array
@@ -30,9 +30,12 @@ public class PicsMapper {
 	public static final String QUIT_BUTTON = path+"push_button/quit.png";
 	public static final String BLACK_BACK_BUTTON = path+"push_button/Black_back.png";
 	public static final String BLACK_MENU_BUTTON = path+"push_button/black_Menu.png";
-	public static final String YES_BUTTON = path+"push_button/yes.png";
+	public static final String YES_BUTTON = path+"push_button/yes.png"; 
 	public static final String NO_BUTTON = path+"push_button/no.png";
 	public static final String OKAY_BUTTON = path+"push_button/ok.png";
+	public static final String RESHUFFLE_BUTTON = path+"push_button/reshuffle.png";
+	public static final String SHUFFLE_BUTTON = path+"push_button/shuffle.png";
+	public static final String GALLERY_BUTTON = path+"push_button/button_gallery.png";
 	//GALLERY_BUTTONS
 	public static final String G_BACK_SMALL_BUTTON = path+"Gallery_button/g_back_small.png";
 	public static final String G_BACK_BUTTON = path+"Gallery_button/g_back.png";
@@ -44,6 +47,14 @@ public class PicsMapper {
 	public static final String TEXT_OPTION = path+"text/option.png";
 	public static final String TEXT_SIZE = path+"text/size.png";
 	public static final String TEXT_QUIT = path+"text/ays.png";
+	public static final String TEXT_4x4 = path+"text/4x4.png";
+	public static final String TEXT_6x6 = path+"text/6x6.png";
+	public static final String TEXT_8x8 = path+"text/8x8.png";
+	public static final String TEXT_ESAY = path+"text/esay.png";
+	public static final String TEXT_NORMAL = path+"text/normal.png";
+	public static final String TEXT_HARD = path+"text/hard.png";
+	
+	
 
 	
 	

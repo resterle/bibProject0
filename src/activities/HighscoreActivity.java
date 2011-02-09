@@ -5,9 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
@@ -31,7 +34,7 @@ public class HighscoreActivity extends Activity{
 		setLayout(null);
 		
 		JLabel optionLabel = new JLabel("Options");
-		JButton okButton = new JButton("ok");
+		JButton okButton = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
 		okButton.setBounds(280, 450 , 250, 100 );
 

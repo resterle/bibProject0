@@ -1,5 +1,6 @@
 package activities;
 
+import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,12 +25,13 @@ public class MenuActivity extends Activity {
 	}
 
 	@Override
-	public void start() {
+	public void start(Container c) {
 		
-		setLayout(new GridLayout(5, 1));
+		c.setLayout(new GridLayout(5, 1));
 		
 		
 		JButton newGameB = new JButton(new ImageIcon(PicsMapper.NEW_GAME_BUTTON));
+		newGameB.setBounds(0, 0, 200, 50);
 		newGameB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -38,9 +40,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(newGameB);
+		c.add(newGameB);
 		
 		JButton highscoreB = new JButton(new ImageIcon(PicsMapper.HIGHSCORE_BUTTON));
+		highscoreB.setBounds(r);
 		highscoreB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -49,9 +52,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(highscoreB);
+		c.add(highscoreB);
 		
 		JButton optionsB = new JButton(new ImageIcon(PicsMapper.OPTIONS_BUTTON));
+		optionsB.setBounds(r);
 		optionsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -60,9 +64,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(optionsB);
+		c.add(optionsB);
 		
 		JButton creditsB = new JButton(new ImageIcon(PicsMapper.CREDITS_BUTTON));
+		creditsB.setBounds(r);
 		creditsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -71,9 +76,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(creditsB);
+		c.add(creditsB);
 		
 		JButton quitB = new JButton(new ImageIcon(PicsMapper.QUIT_BUTTON));
+		quitB.setBounds(r);
 		quitB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -83,7 +89,7 @@ public class MenuActivity extends Activity {
 			}
 		});
 		
-		add(quitB);
+		c.add(quitB);
 			
 	}
 	

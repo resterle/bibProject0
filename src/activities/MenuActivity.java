@@ -25,10 +25,9 @@ public class MenuActivity extends Activity {
 	}
 
 	@Override
-	public void start(Container c) {
+	public void start() {
 		
-		c.setLayout(new GridLayout(5, 1));
-		
+		setLayout(null);
 		
 		JButton newGameB = new JButton(new ImageIcon(PicsMapper.NEW_GAME_BUTTON));
 		newGameB.setBounds(0, 0, 200, 50);
@@ -40,10 +39,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		c.add(newGameB);
+		add(newGameB);
 		
 		JButton highscoreB = new JButton(new ImageIcon(PicsMapper.HIGHSCORE_BUTTON));
-		highscoreB.setBounds(r);
+		highscoreB.setBounds(0, 10, 200, 50);
 		highscoreB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -52,10 +51,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		c.add(highscoreB);
+		add(highscoreB);
 		
 		JButton optionsB = new JButton(new ImageIcon(PicsMapper.OPTIONS_BUTTON));
-		optionsB.setBounds(r);
+		optionsB.setBounds(0, 20, 200, 50);
 		optionsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -64,10 +63,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		c.add(optionsB);
+		add(optionsB);
 		
 		JButton creditsB = new JButton(new ImageIcon(PicsMapper.CREDITS_BUTTON));
-		creditsB.setBounds(r);
+		creditsB.setBounds(0, 30, 200, 50);
 		creditsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -76,10 +75,10 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		c.add(creditsB);
+		add(creditsB);
 		
 		JButton quitB = new JButton(new ImageIcon(PicsMapper.QUIT_BUTTON));
-		quitB.setBounds(r);
+		quitB.setBounds(0, 40, 200, 50);
 		quitB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -89,7 +88,7 @@ public class MenuActivity extends Activity {
 			}
 		});
 		
-		c.add(quitB);
+		add(quitB);
 			
 	}
 	

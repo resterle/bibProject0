@@ -33,13 +33,7 @@ public abstract class Activity extends JPanel{
 	}
 	
 	// Overwrite this method with your own Code.
-	public void start(){
-		
-		String name = (String)params.getValue("name");
-		JLabel jl = new JLabel(name);
-		add(jl);
-			
-	}
+	public void start(){}
 	
 	protected void returnData() {
 		controller.returnData(this.getClass().getSimpleName(), returnParams);

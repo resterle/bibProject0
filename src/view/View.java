@@ -1,13 +1,13 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
-
 import model.PicsMapper;
 
 public class View extends JFrame{

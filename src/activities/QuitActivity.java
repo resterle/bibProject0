@@ -13,7 +13,7 @@ import view.Activity;
 
 public class QuitActivity extends Activity {
 	
-	public static final String PARAM_QUIT = "quit";
+	public static final String RETURN_QUIT = "quit";
 	
 	public QuitActivity(Controller controller) {
 		super(controller);
@@ -31,7 +31,7 @@ public class QuitActivity extends Activity {
 			
 			//The Button No returns a false
 			public void actionPerformed(ActionEvent e) {
-				returnParams.addParameter(PARAM_QUIT, false);
+				returnParams.addParameter(RETURN_QUIT, false);
 				returnData();
 			}
 		});

@@ -4,8 +4,21 @@ public class GameModel {
 	
 	// The Model Class to store the Applicationdata.
 	
-	// The number of pieces.
 	
+	// Path of the selected Picture.
+	
+	private String picturePath;
+	
+	public String getPicturePath() {
+		return picturePath;
+	}
+
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
+	}
+	
+	// The number of pieces.
+
 	private int pieceCount;
 	
 	

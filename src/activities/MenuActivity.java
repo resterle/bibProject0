@@ -8,7 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import model.MainMenuModel;
-import model.picsMapper;
+import model.PicsMapper;
+
 
 import controller.Controller;
 
@@ -27,7 +28,8 @@ public class MenuActivity extends Activity {
 		
 		setLayout(new GridLayout(5, 1));
 		
-		JButton newGameB = new JButton(new ImageIcon(picsMapper.NEW_GAME_BUTTON));
+		
+		JButton newGameB = new JButton(new ImageIcon(PicsMapper.NEW_GAME_BUTTON));
 		newGameB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -38,7 +40,7 @@ public class MenuActivity extends Activity {
 		});
 		add(newGameB);
 		
-		JButton highscoreB = new JButton(new ImageIcon(picsMapper.HIGHSCORE_BUTTON));
+		JButton highscoreB = new JButton(new ImageIcon(PicsMapper.HIGHSCORE_BUTTON));
 		highscoreB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -49,7 +51,7 @@ public class MenuActivity extends Activity {
 		});
 		add(highscoreB);
 		
-		JButton optionsB = new JButton(new ImageIcon(picsMapper.OPTIONS_BUTTON));
+		JButton optionsB = new JButton(new ImageIcon(PicsMapper.OPTIONS_BUTTON));
 		optionsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -60,7 +62,7 @@ public class MenuActivity extends Activity {
 		});
 		add(optionsB);
 		
-		JButton creditsB = new JButton(new ImageIcon(picsMapper.CREDITS_BUTTON));
+		JButton creditsB = new JButton(new ImageIcon(PicsMapper.CREDITS_BUTTON));
 		creditsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -71,7 +73,7 @@ public class MenuActivity extends Activity {
 		});
 		add(creditsB);
 		
-		JButton quitB = new JButton(new ImageIcon(picsMapper.QUIT_BUTTON));
+		JButton quitB = new JButton(new ImageIcon(PicsMapper.QUIT_BUTTON));
 		quitB.addActionListener(new ActionListener() {
 			
 			@Override

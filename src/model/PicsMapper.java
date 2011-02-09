@@ -32,6 +32,7 @@ public class PicsMapper {
 	public static final String BLACK_MENU_BUTTON = path+"push_button/black_Menu.png";
 	public static final String YES_BUTTON = path+"push_button/yes.png";
 	public static final String NO_BUTTON = path+"push_button/no.png";
+	public static final String OKAY_BUTTON = path+"push_button/ok.png";
 	//GALLERY_BUTTONS
 	public static final String G_BACK_SMALL_BUTTON = path+"Gallery_button/g_back_small.png";
 	public static final String G_BACK_BUTTON = path+"Gallery_button/g_back.png";

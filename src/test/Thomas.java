@@ -12,7 +12,7 @@ import view.Activity;
 import view.ParameterList;
 import view.View;
 
-public class thomas {
+public class Thomas {
 	
 public static void main(String[] args) {
 		ParameterList params = new ParameterList();

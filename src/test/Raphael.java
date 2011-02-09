@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import model.GalleryModel;
 import model.GameModel;
-import model.picsMapper;
+import model.PicsMapper;
 import view.View;
 import controller.Controller;
 

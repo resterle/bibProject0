@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Container;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -41,6 +43,11 @@ public abstract class Activity extends JPanel{
 	
 	protected void returnData() {
 		controller.returnData(this.getClass().getSimpleName(), returnParams);
+	}
+
+	public void start(Container pane) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

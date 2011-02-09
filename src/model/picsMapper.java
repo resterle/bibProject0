@@ -11,4 +11,19 @@ public class picsMapper {
 	public static final String OPTIONS_BUTTON = path+"option.png";
 	public static final String CREDITS_BUTTON = path+"button_credits.png";
 	public static final String QUIT_BUTTON = path+"quit.png";
+	
+	private static String puzzlePicsPath = path+"puzzlePics/";
+	
+	public static final String[] PUZZLE_PICS = {
+				puzzlePicsPath+"audi.jpg",
+				puzzlePicsPath+"cooper.jpg",
+				puzzlePicsPath+"flower.jpg",
+				puzzlePicsPath+"music.jpg",
+				puzzlePicsPath+"joker.jpg",
+				puzzlePicsPath+"face.jpg",
+				puzzlePicsPath+"kiss.jpg",
+				puzzlePicsPath+"silicon_chip.jpg",
+				puzzlePicsPath+"queen.jpg"
+	};
+	
 }

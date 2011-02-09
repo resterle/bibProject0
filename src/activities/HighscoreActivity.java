@@ -14,6 +14,9 @@ import view.Activity;
 
 public class HighscoreActivity extends Activity{
 
+	public static final String PARAM_USERS = "users";
+	public static final String PARAM_SCORES = "scores";
+	
 	public HighscoreActivity(Controller controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
@@ -22,8 +25,8 @@ public class HighscoreActivity extends Activity{
 	@Override
 	public void start() {
 		
-		ArrayList<String> users = (ArrayList<String>) params.getValue("users");
-		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue("scores");
+		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
+		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
 		
 		setLayout(new GridLayout(3, 1));
 		

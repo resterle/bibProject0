@@ -4,6 +4,7 @@ import model.GameModel;
 import controller.Controller;
 import activities.CreditsActivity;
 import activities.MenuActivity;
+import activities.OptionsActivity;
 import activities.QuitActivity;
 import activities.WonActivity;
 import view.Activity;
@@ -18,8 +19,8 @@ public static void main(String[] args) {
 		params.addParameter("time", "120s");
 	
 	
-		View v = new View("Won");
-		v.startActivity(new WonActivity(null), params);
+		View v = new View("Options");
+		v.startActivity(new OptionsActivity(null), null);
 	}
 
 }

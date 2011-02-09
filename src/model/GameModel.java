@@ -6,8 +6,21 @@ public class GameModel {
 	
 	// The Model Class to store the Applicationdata.
 	
-	// The number of pieces.
 	
+	// Path of the selected Picture.
+	
+	private String picturePath;
+	
+	public String getPicturePath() {
+		return picturePath;
+	}
+
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
+	}
+	
+	// The number of pieces.
+
 	private int pieceCount;
 	
 	private ParameterList higescrors;
@@ -60,4 +73,23 @@ public class GameModel {
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
 	}
+	
+	//THe size influence the count of pieces in which the picture is sliced
+	
+	public final static int SIZE_4X4 = 0;
+	public final static int SIZE_6X6 = 1;
+	public final static int SIZE_8X8 = 2;
+	
+	private int size;
+
+
+	public int getsize() {
+		return size;
+	}
+
+	public void setsize(int size) {
+		this.size = size;
+	}
+	
+	
 }

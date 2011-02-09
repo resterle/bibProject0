@@ -1,11 +1,13 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import model.GalleryModel;
 import model.GameModel;
-import controller.Controller;
-import activities.MenuActivity;
-import view.Activity;
-import view.ParameterList;
+import model.picsMapper;
 import view.View;
+import controller.Controller;
 
 public class Raphael{
 
@@ -15,10 +17,12 @@ public class Raphael{
 	 */
 	public static void main(String[] args) {
 		
-		//View v = new View("TEST1");
+		View v = new View("Test-Raphael");
+		
+		GalleryModel gm = new GalleryModel(new ArrayList(Arrays.asList(picsMapper.PUZZLE_PICS)));
 		
 		
-		Controller con = new Controller(new GameModel(), new View("Test"));
+		Controller con = new Controller(new GameModel(), v, gm);
 		con.start();
 
 	}

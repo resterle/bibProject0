@@ -1,6 +1,9 @@
 package controller;
 
+import java.util.ArrayList;
+
 import activities.CreditsActivity;
+import activities.HighscoreActivity;
 import activities.MenuActivity;
 import activities.QuitActivity;
 import view.ParameterList;
@@ -38,6 +41,21 @@ public class Controller {
 				case MainMenuModel.NEW_GAME:
 					break;
 				case MainMenuModel.HIGHSCORE:
+					ArrayList<String> s = new ArrayList<String>();
+					s.add("Hans");
+					s.add("Peter");
+					s.add("Olaf");
+					
+					ArrayList<Integer> i = new ArrayList<Integer>();
+					i.add(20);
+					i.add(30);
+					i.add(120);
+					
+					ParameterList p = new ParameterList();
+					p.addParameter("users", s);
+					p.addParameter("scores", i);
+					
+					view.startActivity(new HighscoreActivity(this), p);
 					break;
 				case MainMenuModel.OPTIONS:
 					break;
@@ -56,8 +74,12 @@ public class Controller {
 			start();
 		}
 		
+		else if(activityClass.equals(HighscoreActivity.class.getSimpleName()))
+			start();
+		
 		else if(activityClass.equals(CreditsActivity.class.getSimpleName()))
 			start();
+		
 		
 	}
 	

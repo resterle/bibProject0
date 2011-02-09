@@ -42,6 +42,8 @@ public class PicsMapper {
 	public static final String TEXT_DIFFICULTY = path+"text/difficulty.png";
 	public static final String TEXT_OPTION = path+"text/option.png";
 	public static final String TEXT_SIZE = path+"text/size.png";
+	public static final String TEXT_QUIT = path+"text/ays.png";
+
 	
 	
 	

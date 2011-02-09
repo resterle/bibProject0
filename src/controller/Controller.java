@@ -48,15 +48,15 @@ public class Controller {
 	
 	public void returnData(String activityClass, ParameterList params){
 		
-		ParameterList p = new ParameterList();
+		ParameterList pl = new ParameterList();
 		
 		if(activityClass.equals(MenuActivity.class.getSimpleName())){
 			switch((Integer)params.getValue(MenuActivity.PARAM_MENUITEM)){
 				case MainMenuModel.NEW_GAME:
 					
-					p.addParameter(PlayernameActivity.PARAMS_NAME, model.getPlayerName());
+					pl.addParameter(PlayernameActivity.PARAMS_NAME, model.getPlayerName());
 					
-					view.startActivity(new PlayernameActivity(this), p);
+					view.startActivity(new PlayernameActivity(this), pl);
 					
 					break;
 				case MainMenuModel.HIGHSCORE:
@@ -70,10 +70,10 @@ public class Controller {
 					i.add(30);
 					i.add(120);
 					
-					p.addParameter(HighscoreActivity.PARAM_USERS, s);
-					p.addParameter(HighscoreActivity.PARAM_SCORES, i);
+					pl.addParameter(HighscoreActivity.PARAM_USERS, s);
+					pl.addParameter(HighscoreActivity.PARAM_SCORES, i);
 					
-					view.startActivity(new HighscoreActivity(this), p);
+					view.startActivity(new HighscoreActivity(this), pl);
 					break;
 				case MainMenuModel.OPTIONS:
 					view.startActivity(new OptionsActivity(this), null);
@@ -100,14 +100,18 @@ public class Controller {
 			start();
 		
 		else if(activityClass.equals(ImageLoder.class.getSimpleName())){
-			ParameterList pl = new ParameterList();
+			
 			pl.addParameter(GalleryActivity.PARAM_PICS, params.getValue(ImageLoder.RETURN_PICS));
 			view.startActivity(new GalleryActivity(this), params);
 		}
 		
 		else if(activityClass.equals(PlayernameActivity.class.getSimpleName())){
-			//if(params.get(PlayernameActivity.RETURN_GALLARY))
-			System.out.println("hans");
+			
+			pl.addParameter(LoadingActivity.PARAM_MESSAGE, "Loading Gallery");
+			view.startActivity(new LoadingActivity(this), pl);
+			ImageLoder il = new ImageLoder(this, galleryModel);
+			il.start();
+
 		}
 		
 	}

@@ -26,6 +26,8 @@ public class Controller {
 		this.view = view;
 	}
 	
+	// This Method is called to start the Controller
+	
 	public void start(){
 		
 		// Start the menuActivity.
@@ -33,6 +35,9 @@ public class Controller {
 		view.startActivity(new MenuActivity(this), null);
 		
 	}
+	
+	
+	// This Method is called by the Activities when Activity wants to return data.
 	
 	public void returnData(String activityClass, ParameterList params){
 		

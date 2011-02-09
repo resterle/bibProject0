@@ -1,5 +1,7 @@
 package model;
 
+import view.ParameterList;
+
 public class GameModel {
 	
 	// The Model Class to store the Applicationdata.
@@ -8,6 +10,7 @@ public class GameModel {
 	
 	private int pieceCount;
 	
+	private ParameterList higescrors;
 	
 	public int getPieceCount() {
 		return pieceCount;

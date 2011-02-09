@@ -37,6 +37,7 @@ public class PlayernameActivity extends Activity {
 		//Buttons declaration
 		JButton gallaryB = new JButton("Gallary");
 		JButton ownPicB = new JButton("Use own Picture");
+		JButton backB = new JButton("Back");
 		
 		//Label declaration
 		JLabel nameL = new JLabel("Enter your name: ");
@@ -62,10 +63,11 @@ public class PlayernameActivity extends Activity {
 		Buttons.add(gallaryB);
 		Buttons.add(ownPicB);
 		
-		setLayout(new GridLayout(2, 1));
+		setLayout(new GridLayout(3, 1));
 		
 		add(enterName);
 		add(Buttons);
+		add(backB);
 		
 		
 		//Action what the Buttons shall return to Controller as soon as they are pushed
@@ -87,6 +89,16 @@ public class PlayernameActivity extends Activity {
 			
 				returnParams.addParameter(RETURN_GALLARY, false);
 				returnName();
+				
+			}
+		});
+		
+		//Button to get Back
+		backB.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+				returnData();
 				
 			}
 		});

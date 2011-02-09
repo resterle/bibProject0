@@ -24,11 +24,12 @@ public class OptionsActivity extends Activity {
 	
 	public void start(){
 		
-		
-		
+		setLayout(null);
 		
 		//Declaration of the Button
 		JButton okayB = new JButton("OK");
+		
+		okayB.setBounds(300, 400 , 250, 100 );
 
 		//Declaration of the different Panels
 		JPanel sizeP = new JPanel();
@@ -68,9 +69,7 @@ public class OptionsActivity extends Activity {
 		diffRB.add(hardButton);
 		
 		
-		//The Order of the Panels, Labels and Radio Buttons are declared 
-		setLayout(new GridLayout(4, 1));
-		
+		//The Order of the Panels, Labels and Radio Buttons are declared 	
 		sizeP.setLayout(new GridLayout(2, 1));
 		sizeP.add(youSizeL);
 		sizeP.add(sizeOptionsP);
@@ -94,7 +93,10 @@ public class OptionsActivity extends Activity {
 		
 		
 		
+
+		
 		//returnData();
+		
 		
 		
 		//A new ACtion Listener is declared
@@ -132,7 +134,7 @@ public class OptionsActivity extends Activity {
 					}
 				}
 				
-
+				returnData();
 				
 			}
 		});

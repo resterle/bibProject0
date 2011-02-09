@@ -6,12 +6,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 import model.GameModel;
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
@@ -27,7 +29,7 @@ public class OptionsActivity extends Activity {
 		setLayout(null);
 		
 		//Declaration of the Button
-		JButton okayB = new JButton("OK");
+		JButton okayB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
 		okayB.setBounds(280, 450 , 250, 100 );
 

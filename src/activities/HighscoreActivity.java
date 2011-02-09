@@ -5,9 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
@@ -28,10 +31,13 @@ public class HighscoreActivity extends Activity{
 		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
 		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
 		
-		setLayout(new GridLayout(3, 1));
+		setLayout(null);
 		
 		JLabel optionLabel = new JLabel("Options");
-		JButton okButton = new JButton("ok");
+		JButton okButton = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
+		
+		okButton.setBounds(280, 450 , 250, 100 );
+
 		
 		okButton.addActionListener(new ActionListener() {
 			

@@ -23,10 +23,16 @@ public class QuitActivity extends Activity {
 	public void start() {
 		
 		//GridLayout with 2 Buttons
-		setLayout(new GridLayout(2, 1));
+		setLayout(null);
 	
+		int posY = 400;
+		int buttonHeight = 100;
+		int buttonWidth = 250;
+		
+		
 		//Button No
 		JButton newNoB = new JButton("No");
+		newNoB.setBounds(100, posY, buttonWidth, buttonHeight);
 		newNoB.addActionListener(new ActionListener() {
 			
 			//The Button No returns a false
@@ -39,6 +45,7 @@ public class QuitActivity extends Activity {
 		
 		//Button Yes
 		JButton newYesB = new JButton("Yes");
+		newYesB.setBounds(400, posY, buttonWidth, buttonHeight);
 		newYesB.addActionListener(new ActionListener() {
 			
 			//The Button Yes returns a true

@@ -29,8 +29,14 @@ public class MenuActivity extends Activity {
 		
 		setLayout(null);
 		
+		int posX = 275;
+		int magenTop = 20;
+		int magen = 1;
+		int buttonHeight = 100;
+		int buttonWidth = 250;
+		
 		JButton newGameB = new JButton(new ImageIcon(PicsMapper.NEW_GAME_BUTTON));
-		newGameB.setBounds(0, 0, 200, 50);
+		newGameB.setBounds(posX, magenTop, buttonWidth, buttonHeight);
 		newGameB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -42,7 +48,7 @@ public class MenuActivity extends Activity {
 		add(newGameB);
 		
 		JButton highscoreB = new JButton(new ImageIcon(PicsMapper.HIGHSCORE_BUTTON));
-		highscoreB.setBounds(0, 10, 200, 50);
+		highscoreB.setBounds(posX, magenTop + buttonHeight + magen,buttonWidth, buttonHeight);
 		highscoreB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -54,7 +60,7 @@ public class MenuActivity extends Activity {
 		add(highscoreB);
 		
 		JButton optionsB = new JButton(new ImageIcon(PicsMapper.OPTIONS_BUTTON));
-		optionsB.setBounds(0, 20, 200, 50);
+		optionsB.setBounds(posX, magenTop + (buttonHeight * 2) + (magen  * 2),buttonWidth, buttonHeight);
 		optionsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -66,7 +72,7 @@ public class MenuActivity extends Activity {
 		add(optionsB);
 		
 		JButton creditsB = new JButton(new ImageIcon(PicsMapper.CREDITS_BUTTON));
-		creditsB.setBounds(0, 30, 200, 50);
+		creditsB.setBounds(posX,  magenTop + (buttonHeight * 3) + (magen  * 3), buttonWidth, buttonHeight);
 		creditsB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -78,7 +84,7 @@ public class MenuActivity extends Activity {
 		add(creditsB);
 		
 		JButton quitB = new JButton(new ImageIcon(PicsMapper.QUIT_BUTTON));
-		quitB.setBounds(0, 40, 200, 50);
+		quitB.setBounds(posX,  magenTop + (buttonHeight * 4) + (magen  * 4), buttonWidth, buttonHeight);
 		quitB.addActionListener(new ActionListener() {
 			
 			@Override

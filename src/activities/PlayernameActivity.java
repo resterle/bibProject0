@@ -1,6 +1,8 @@
 package activities;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,6 +19,9 @@ public class PlayernameActivity extends Activity {
 
 	public final static String PARAMS_NAME = "DefaultName";
 	
+	JTextField playerName = new JTextField(15);
+	
+	
 	public PlayernameActivity(Controller controller) {
 		super(controller);
 	}
@@ -32,7 +37,7 @@ public class PlayernameActivity extends Activity {
 		JLabel nameL = new JLabel("Enter your name: ");
 		
 		
-		JTextField playerName = new JTextField(15);
+		
 		if (null == params.getValue(PARAMS_NAME)){			
 			playerName.setText(PARAMS_NAME);
 		}
@@ -55,9 +60,38 @@ public class PlayernameActivity extends Activity {
 		add(enterName);
 		add(Buttons);
 		
+		gallaryB.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+			
+				returnParams.addParameter(RETURN_GALLARY, true);
+				returnName();	
+				
+			}
+		});
+		
+		ownPicB.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+			
+				returnParams.addParameter(RETURN_GALLARY, false);
+				returnName();
+				
+			}
+		});
 		
 		
 		
+		
+		
+	}
+	
+	private void returnName(){
+		
+		returnParams.addParameter(RETURN_NAME, playerName.getText());
+		returnData();
 		
 	}
 	

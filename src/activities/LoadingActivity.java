@@ -1,5 +1,7 @@
 package activities;
 
+import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 
 import controller.Controller;
@@ -15,7 +17,8 @@ public class LoadingActivity extends Activity{
 	}
 	
 	@Override
-	public void run(ParameterList params) {
+	public void start() {
+		setLayout(new GridLayout(1, 1));
 		add(new JLabel((String) params.getValue(PARAM_MESSAGE)));
 	}
 	

@@ -29,7 +29,7 @@ public class GalleryActivity extends Activity {
 	@Override
 	public void start() {
 		
-		setLayout(new GridLayout(3, 3));
+		setLayout(new GridLayout(3, 3, 10, 10));
 		
 		// Get Pictures from params.
 		

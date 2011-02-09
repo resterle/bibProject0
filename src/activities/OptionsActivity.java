@@ -29,7 +29,7 @@ public class OptionsActivity extends Activity {
 		//Declaration of the Button
 		JButton okayB = new JButton("OK");
 		
-		okayB.setBounds(300, 400 , 250, 100 );
+		okayB.setBounds(280, 450 , 250, 100 );
 
 		//Declaration of the different Panels
 		JPanel sizeP = new JPanel();

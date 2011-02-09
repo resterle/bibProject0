@@ -7,10 +7,7 @@ import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-import model.GameModel;
 import model.PicsMapper;
 
 public class View extends JFrame{

@@ -8,6 +8,7 @@ import activities.HighscoreActivity;
 import activities.LoadingActivity;
 import activities.MenuActivity;
 import activities.OptionsActivity;
+import activities.PlayernameActivity;
 import activities.QuitActivity;
 import view.ParameterList;
 import view.View;
@@ -42,22 +43,20 @@ public class Controller {
 		
 	}
 	
-	public void returnData(String activityClass, ParameterList params){
+
 	// This Method is called by the Activities when Activity wants to return data.
 	
 	public void returnData(String activityClass, ParameterList params){
+		
+		ParameterList p = new ParameterList();
 		
 		if(activityClass.equals(MenuActivity.class.getSimpleName())){
 			switch((Integer)params.getValue(MenuActivity.PARAM_MENUITEM)){
 				case MainMenuModel.NEW_GAME:
 					
-					ImageLoder il = new ImageLoder(this, galleryModel);
-					il.start();
+					p.addParameter(PlayernameActivity.PARAMS_NAME, model.getPlayerName());
 					
-					ParameterList pl = new ParameterList();
-					pl.addParameter(LoadingActivity.PARAM_MESSAGE, "Loading Gallery...");
-					
-					view.startActivity(new LoadingActivity(this), pl);
+					view.startActivity(new PlayernameActivity(this), p);
 					
 					break;
 				case MainMenuModel.HIGHSCORE:
@@ -71,9 +70,8 @@ public class Controller {
 					i.add(30);
 					i.add(120);
 					
-					ParameterList p = new ParameterList();
-					p.addParameter("users", s);
-					p.addParameter("scores", i);
+					p.addParameter(HighscoreActivity.PARAM_USERS, s);
+					p.addParameter(HighscoreActivity.PARAM_SCORES, i);
 					
 					view.startActivity(new HighscoreActivity(this), p);
 					break;
@@ -105,6 +103,11 @@ public class Controller {
 			ParameterList pl = new ParameterList();
 			pl.addParameter(GalleryActivity.PARAM_PICS, params.getValue(ImageLoder.RETURN_PICS));
 			view.startActivity(new GalleryActivity(this), params);
+		}
+		
+		else if(activityClass.equals(PlayernameActivity.class.getSimpleName())){
+			//if(params.get(PlayernameActivity.RETURN_GALLARY))
+			System.out.println("hans");
 		}
 		
 	}

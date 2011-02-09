@@ -1,17 +1,14 @@
 package view;
 
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import model.GameModel;
-import model.picsMapper;
+import model.PicsMapper;
 
 public class View extends JFrame{
 	
@@ -25,7 +22,7 @@ public class View extends JFrame{
 		super(name);
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		i = toolkit.getImage(picsMapper.BACKGROUND);
+		i = toolkit.getImage(PicsMapper.BACKGROUND);
 		
 		//Bild laden veranlassen
 		MediaTracker tracker = new  MediaTracker(this);

@@ -28,10 +28,13 @@ public class HighscoreActivity extends Activity{
 		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
 		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
 		
-		setLayout(new GridLayout(3, 1));
+		setLayout(null);
 		
 		JLabel optionLabel = new JLabel("Options");
 		JButton okButton = new JButton("ok");
+		
+		okButton.setBounds(280, 450 , 250, 100 );
+
 		
 		okButton.addActionListener(new ActionListener() {
 			

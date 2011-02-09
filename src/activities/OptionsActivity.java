@@ -31,7 +31,7 @@ public class OptionsActivity extends Activity {
 		//Declaration of the Button
 		JButton okayB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
-		okayB.setBounds(280, 450 , 250, 100 );
+		okayB.setBounds(250, 450 , 250, 100 );
 
 		//Declaration of the different Panels
 		JPanel sizeP = new JPanel();
@@ -41,16 +41,20 @@ public class OptionsActivity extends Activity {
 		
 		
 		//Declaration of the Labels
-		JLabel youOptionsL = new JLabel("Options");
-		JLabel youSizeL    = new JLabel("size");	
-		JLabel youDiffL    = new JLabel("difficulty");
-		
+		JLabel youOptionsL = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
+		youOptionsL.setBounds(250, 0 , 250, 100 );
+ 		JLabel youSizeL    = new JLabel(new ImageIcon(PicsMapper.TEXT_SIZE));
+ 		youSizeL.setBounds(250, 100 , 250, 100 );
+		JLabel youDiffL    = new JLabel(new ImageIcon(PicsMapper.TEXT_DIFFICULTY));
+		youDiffL.setBounds(250, 250 , 250, 100 );
 		
 		//declare RadioButtons for the size
 		final JRadioButton fourButton   = new JRadioButton("4x4", true);
+		fourButton.setBounds(100, 200 , 50, 50);
 		final JRadioButton sixButton    = new JRadioButton("6x6", false);
+		sixButton.setBounds(350, 200 , 50, 50 );
 		final JRadioButton eightButton  = new JRadioButton("8x8", false);
-
+		 eightButton.setBounds(550, 200 , 50, 50 );
 		
 		// Set radio buttons on the ButtonGroup 
 		final ButtonGroup sizeRB = new ButtonGroup();
@@ -60,8 +64,11 @@ public class OptionsActivity extends Activity {
 		
 		//declare RadioButtons for the difficulty
 		final JRadioButton easyButton   = new JRadioButton("easy"  , true);
+		easyButton.setBounds(100, 350 , 80, 50);
 		final JRadioButton normalButton = new JRadioButton("normal", false);
+		normalButton.setBounds(350, 350 , 80, 50);
 		final JRadioButton hardButton   = new JRadioButton("hard"  , false);
+		hardButton.setBounds(550, 350 , 80, 50);
 
 		
 		// Set radio buttons on the ButtonGroup 		 
@@ -89,9 +96,16 @@ public class OptionsActivity extends Activity {
 		diffOptionsP.add(hardButton);
 		
 		add(youOptionsL);
-		add(sizeP);
-		add(diffP);
+		add(youDiffL);
+		add(youSizeL);
 		add(okayB);
+		add(fourButton);
+		add(sixButton);
+		add(eightButton);
+		add(easyButton);
+		add(normalButton);
+		add(hardButton);
+		
 		
 		
 		

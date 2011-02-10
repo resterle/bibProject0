@@ -1,16 +1,19 @@
 package activities;
 
-import java.awt.GridLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class ChoosePicActivity extends Activity {
 
@@ -26,22 +29,25 @@ public class ChoosePicActivity extends Activity {
 	
 	public void start() {
 		
+		
+		setLayout(null);
+		
+		playerName.setBounds(380, 200, 300, 20);
+		
 		//Declaration of the "OK" Button
-		JButton okayB = new JButton("OK");
+		ImageButton okayB = new ImageButton(PicsMapper.OKAY_BUTTON);
+		okayB.setBounds(275, 450 , 250, 100 );
 		
 		//JLabel declaration
 		JLabel nameL = new JLabel("Enter the path of the picture: ");
-		
-		//JPanel Declaration
-		JPanel pathP = new JPanel();
-		
+		nameL.setFont(new Font("Times New Roman",1,20));
+		nameL.setBounds(130, 200, 300, 20);
+				
 		
 		//Layout declaration
-		pathP.add(nameL);
-		pathP.add(playerName);
+		add(nameL);
+		add(playerName);
 		
-		setLayout(new GridLayout(2, 1));
-		add(pathP);
 		add(okayB);
 		
 		

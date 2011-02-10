@@ -13,6 +13,7 @@ import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class QuitActivity extends Activity {
 	
@@ -39,7 +40,7 @@ public class QuitActivity extends Activity {
 		
 		
 		//Button No
-		JButton newNoB = new JButton(new ImageIcon(PicsMapper.NO_BUTTON));
+		ImageButton newNoB = new ImageButton(PicsMapper.NO_BUTTON);
 		newNoB.setBounds(100, posY, buttonWidth, buttonHeight);
 		newNoB.addActionListener(new ActionListener() {
 			
@@ -52,7 +53,7 @@ public class QuitActivity extends Activity {
 		add(newNoB);
 		
 		//Button Yes
-		JButton newYesB = new JButton(new ImageIcon(PicsMapper.YES_BUTTON));
+		ImageButton newYesB = new ImageButton(PicsMapper.YES_BUTTON);
 		newYesB.setBounds(400, posY, buttonWidth, buttonHeight);
 		newYesB.addActionListener(new ActionListener() {
 			

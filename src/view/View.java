@@ -2,17 +2,16 @@ package view;
 
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.MediaTracker;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 import model.PicsMapper;
@@ -24,21 +23,30 @@ public class View extends JFrame{
 	
 	private Image i;
 	
-	private JPanel jp;
+	private JPanel bg;
+	
+	private JLayeredPane jp;
+	
+	private BufferedImage background;
 	
 	public View(String name){
+		
 		super(name);
 		
-		mainCon = getContentPane();
-		jp = new JPanel();
-		jp.setBackground(Color.RED);
+		try {
+			 background= ImageIO.read(new File(PicsMapper.BACKGROUND));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		mainCon = getContentPane();
 		
 		// Set default Windowparameters.
 	
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+		//setVisible(true);
 	}
 	
 	// Method to start an Activity.
@@ -52,8 +60,16 @@ public class View extends JFrame{
 		
 	}
 	
+//	@Override
+//	public void paint(Graphics g) {
+//		super.paint(g);
+//		g.drawImage(background, 0, 0, this);
+//	}
+	
 	public void update(){
 		mainCon.validate();
 	}
+	
+	
 	
 }

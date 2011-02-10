@@ -26,6 +26,8 @@ public class OptionsActivity extends Activity {
 	
 	public void start(){
 		
+		ImageIcon vv=new ImageIcon(url);
+
 		setLayout(null);
 		
 		//Declaration of the Button
@@ -96,7 +98,7 @@ public class OptionsActivity extends Activity {
 		diffOptionsP.add(hardButton);
 		
 		add(youOptionsL);
-		add(youDiffL);
+		add( new JLabel(scale(youDiffL.getImage(), 0.75)));
 		add(youSizeL);
 		add(okayB);
 		add(fourButton);

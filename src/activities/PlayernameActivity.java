@@ -4,10 +4,13 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
@@ -34,10 +37,11 @@ public class PlayernameActivity extends Activity {
 		
 		
 		
+		
 		//Buttons declaration
 		JButton gallaryB = new JButton("Gallary");
 		JButton ownPicB = new JButton("Use own Picture");
-		JButton backB = new JButton("Back");
+		JButton backB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
 		//Label declaration
 		JLabel nameL = new JLabel("Enter your name: ");

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import activities.ChoosePicActivity;
+import activities.MenuActivity;
+import activities.OptionsActivity;
 import activities.PlayernameActivity;
 
 import model.GalleryModel;
@@ -21,7 +23,7 @@ public class Thomas {
 		ParameterList params = new ParameterList();
 		params.addParameter(PlayernameActivity.PARAMS_NAME, null);
 		
-		v.startActivity(new PlayernameActivity(null), params);
+		v.startActivity(new ChoosePicActivity(null), null);
 	}
 
 }

@@ -40,6 +40,7 @@ public class Controller {
 		// Start the menuActivity.
 		
 		view.startActivity(new MenuActivity(this), null);
+		view.setVisible(true);
 		
 	}
 	

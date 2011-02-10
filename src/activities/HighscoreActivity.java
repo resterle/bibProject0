@@ -28,16 +28,18 @@ public class HighscoreActivity extends Activity{
 	@Override
 	public void start() {
 		
-		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
-		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
-		
 		setLayout(null);
 		
-		JLabel optionLabel = new JLabel("Options");
+		JLabel optionLabel = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
+		optionLabel.setBounds(250, 0 , 250, 100 );
 		JButton okButton = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
 		okButton.setBounds(280, 450 , 250, 100 );
-
+		
+		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
+		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
+		
+		
 		
 		okButton.addActionListener(new ActionListener() {
 			

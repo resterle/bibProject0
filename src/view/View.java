@@ -6,7 +6,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import model.PicsMapper;
 
@@ -18,8 +22,14 @@ public class View extends JFrame{
 	private Image i;
 	
 	public View(String name){
-		
 		super(name);
+		
+		try {
+			i = ImageIO.read(new File("pics/background/puzzle.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		i = toolkit.getImage(PicsMapper.BACKGROUND);
@@ -62,8 +72,7 @@ public class View extends JFrame{
 	
 	@Override
 	public void paint(Graphics g) {
-		super.paint(g);
-		//g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
+		g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
 	}
 	
 }

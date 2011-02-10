@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 public class Resize { 
 	
 
-    public static ImageIcon scale(Image src, double scale) {
+    public ImageIcon scale(Image src, double scale) {
         int w = (int)(scale*src.getWidth(null));
         int h = (int)(scale*src.getHeight(null));
         int type = BufferedImage.TYPE_INT_RGB;

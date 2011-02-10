@@ -78,7 +78,7 @@ public class MenuActivity extends Activity {
 		});
 		
 		JButton quitB = new ImageButton(PicsMapper.QUIT_BUTTON);
-		quitB.setBounds(posX,  magenTop + (buttonHeight * 4) + (magen  * 4), buttonWidth, buttonHeight);
+		quitB.setBounds(282,  magenTop + (buttonHeight * 4) + (magen  * 4), buttonWidth, buttonHeight);
 		quitB.addActionListener(new ActionListener() {
 			
 			@Override

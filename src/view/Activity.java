@@ -33,15 +33,6 @@ public abstract class Activity extends JPanel{
 	
 	public Activity(Controller controller){
 		this.controller = controller;
-		try {
-			i = ImageIO.read(new File("pics/background/puzzle.png"));
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		i = toolkit.getImage(PicsMapper.BACKGROUND);
 	}
 	
 	// The run method will be called from the View;
@@ -57,11 +48,6 @@ public abstract class Activity extends JPanel{
 	
 	protected void returnData() {
 		controller.returnData(this.getClass().getSimpleName(), returnParams);
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		//g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
 	}
 	
 	

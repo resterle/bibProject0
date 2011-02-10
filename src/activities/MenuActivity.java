@@ -44,7 +44,6 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(newGameB);
 		
 		JButton highscoreB = new ImageButton(PicsMapper.HIGHSCORE_BUTTON);
 		highscoreB.setBounds(posX, magenTop + buttonHeight + magen,buttonWidth, buttonHeight);
@@ -56,7 +55,6 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(highscoreB);
 		
 		JButton optionsB = new ImageButton(PicsMapper.OPTIONS_BUTTON);
 		optionsB.setBounds(posX, magenTop + (buttonHeight * 2) + (magen  * 2),buttonWidth, buttonHeight);
@@ -68,7 +66,6 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(optionsB);
 		
 		JButton creditsB = new ImageButton(PicsMapper.CREDITS_BUTTON);
 		creditsB.setBounds(posX,  magenTop + (buttonHeight * 3) + (magen  * 3), buttonWidth, buttonHeight);
@@ -80,7 +77,6 @@ public class MenuActivity extends Activity {
 				returnData();
 			}
 		});
-		add(creditsB);
 		
 		JButton quitB = new ImageButton(PicsMapper.QUIT_BUTTON);
 		quitB.setBounds(posX,  magenTop + (buttonHeight * 4) + (magen  * 4), buttonWidth, buttonHeight);
@@ -93,6 +89,10 @@ public class MenuActivity extends Activity {
 			}
 		});
 		
+		add(newGameB);
+		add(highscoreB);
+		add(optionsB);
+		add(creditsB);
 		add(quitB);
 			
 	}

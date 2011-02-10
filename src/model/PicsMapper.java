@@ -53,6 +53,7 @@ public class PicsMapper {
 	public static final String TEXT_ESAY = path+"text/esay.png";
 	public static final String TEXT_NORMAL = path+"text/normal.png";
 	public static final String TEXT_HARD = path+"text/hard.png";
+	public static final String TEXT_AYS = path+"text/ays.png";
 	
 	
 

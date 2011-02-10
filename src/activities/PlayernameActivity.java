@@ -44,7 +44,7 @@ public class PlayernameActivity extends Activity {
 		JButton ownPicB = new JButton("Use own Picture");
 		ownPicB.setBounds(100, 250 , 250, 100 );
 		JButton backB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
-		backB.setBounds(250, 450 , 250, 100 );
+		backB.setBounds(280, 450 , 250, 100 );
 		//Label declaration
 		JLabel nameL = new JLabel("Enter your name: ");
 		
@@ -69,7 +69,6 @@ public class PlayernameActivity extends Activity {
 		Buttons.add(gallaryB);
 		Buttons.add(ownPicB);
 		
-		setLayout(new GridLayout(3, 1));
 		
 		add(enterName);
 		add(Buttons);
@@ -108,10 +107,6 @@ public class PlayernameActivity extends Activity {
 				
 			}
 		});
-		
-		
-		
-		
 		
 	}
 	

@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 
+import activities.ChoosePicActivity;
 import activities.CreditsActivity;
 import activities.GalleryActivity;
 import activities.HighscoreActivity;
@@ -107,12 +108,11 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(PlayernameActivity.class.getSimpleName())){
-			
-			pl.addParameter(LoadingActivity.PARAM_MESSAGE, "Loading Gallery");
-			view.startActivity(new LoadingActivity(this), pl);
-			ImageLoder il = new ImageLoder(this, galleryModel);
-			il.start();
-
+			model.setPlayerName((String) params.getValue(PlayernameActivity.RETURN_NAME));
+			if((Boolean) params.getValue(PlayernameActivity.RETURN_GALLARY))
+				view.startActivity(null, params);
+			else
+				view.startActivity(new ChoosePicActivity(this), null);
 		}
 		
 	}

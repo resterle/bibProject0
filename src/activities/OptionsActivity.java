@@ -1,5 +1,6 @@
 package activities;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -19,6 +20,7 @@ import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class OptionsActivity extends Activity {
 
@@ -31,13 +33,13 @@ public class OptionsActivity extends Activity {
 		
 	
 
-		//setLayout(null);  
+		setLayout(null);  
 		
 	
 		//Declaration of the Button
-		JButton okayB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
+		ImageButton okayB = new ImageButton(PicsMapper.OKAY_BUTTON);
 		
-		okayB.setBounds(250, 450 , 250, 100 );
+		okayB.setBounds(270, 450 , 250, 100 );
 
 		//Declaration of the different Panels
 		JPanel sizeP = new JPanel();
@@ -48,22 +50,56 @@ public class OptionsActivity extends Activity {
 		
 		//Declaration of the Labels
 		JLabel youOptionsL = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
-		youOptionsL.setBounds(250, 0 , 250, 100 );
-		setLayout(new GridLayout(6,6));
-		ImageIcon pic1=new ImageIcon(PicsMapper.TEXT_SIZE);
- 		JLabel youSizeL    = new JLabel(new ImageIcon(pic1.getImage()),  JLabel.CENTER);
- 		youSizeL.setBounds(250, 100 , 250, 100 );
+		youOptionsL.setBounds(260, 0 , 250, 100 );
+		
+		ImageIcon pic1 = new ImageIcon(PicsMapper.TEXT_SIZE);
+		pic1 = Resize.scale(pic1.getImage(), 0.55);
+ 		JLabel youSizeL    = new JLabel(pic1);
+ 		youSizeL.setBounds(270, 100 , 250, 100 );
+ 		
  		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
-		JLabel youDiffL    = new JLabel(new ImageIcon(pic2.getImage()),  JLabel.CENTER);
-		youDiffL.setBounds(250, 250 , 250, 100 );
+ 		pic2 = Resize.scale(pic2.getImage(), 0.55);
+		JLabel youDiffL    = new JLabel(pic2);
+		youDiffL.setBounds(270, 265 , 250, 100 );
+		
+		ImageIcon pic3  = new ImageIcon(PicsMapper.TEXT_4x4);
+		pic3 = Resize.scale(pic3.getImage(), 0.35);
+ 		JLabel fourL  = new JLabel(pic3);
+ 		fourL.setBounds(60, 181 , 100, 100 );
+ 		
+ 		ImageIcon pic4 =new ImageIcon(PicsMapper.TEXT_6x6);
+ 		pic4 = Resize.scale(pic4.getImage(), 0.35);
+		JLabel sixL    = new JLabel(pic4);
+		sixL.setBounds(340, 181 , 100, 100 );
+		
+		ImageIcon pic5 =new ImageIcon(PicsMapper.TEXT_8x8);
+ 		pic5 = Resize.scale(pic5.getImage(), 0.35);
+		JLabel eightL  = new JLabel(pic5);
+		eightL.setBounds(610, 181 , 100, 100 );
+		
+		ImageIcon pic6  = new ImageIcon(PicsMapper.TEXT_4x4);
+		pic6 = Resize.scale(pic6.getImage(), 0.35);
+ 		JLabel easyL  = new JLabel(pic3);
+ 		easyL.setBounds(60, 341 , 100, 100 );
+ 		
+ 		ImageIcon pic7 =new ImageIcon(PicsMapper.TEXT_6x6);
+ 		pic7 = Resize.scale(pic7.getImage(), 0.35);
+		JLabel normalL   = new JLabel(pic7);
+		normalL .setBounds(340, 341 , 100, 100 );
+		
+		ImageIcon pic8 =new ImageIcon(PicsMapper.TEXT_8x8);
+ 		pic8 = Resize.scale(pic8.getImage(), 0.35);
+		JLabel hardL  = new JLabel(pic5);
+		hardL.setBounds(610, 341 , 100, 100 );
+		
 		
 		//declare RadioButtons for the size
-		final JRadioButton fourButton   = new JRadioButton("4x4", true);
-		fourButton.setBounds(100, 200 , 50, 50);
-		final JRadioButton sixButton    = new JRadioButton("6x6", false);
-		sixButton.setBounds(350, 200 , 50, 50 );
-		final JRadioButton eightButton  = new JRadioButton("8x8", false);
-		 eightButton.setBounds(550, 200 , 50, 50 );
+		final JRadioButton fourButton   = new JRadioButton("",true);
+		fourButton.setBounds(100, 200 , 30, 14);
+		final JRadioButton sixButton    = new JRadioButton("", false);
+		sixButton.setBounds(380, 200 , 30, 14);
+		final JRadioButton eightButton  = new JRadioButton("", false);
+		 eightButton.setBounds(650, 200 , 30, 14);
 		
 		// Set radio buttons on the ButtonGroup 
 		final ButtonGroup sizeRB = new ButtonGroup();
@@ -72,12 +108,12 @@ public class OptionsActivity extends Activity {
 		sizeRB.add(eightButton);
 		
 		//declare RadioButtons for the difficulty
-		final JRadioButton easyButton   = new JRadioButton("easy"  , true);
-		easyButton.setBounds(100, 350 , 80, 50);
-		final JRadioButton normalButton = new JRadioButton("normal", false);
-		normalButton.setBounds(350, 350 , 80, 50);
-		final JRadioButton hardButton   = new JRadioButton("hard"  , false);
-		hardButton.setBounds(550, 350 , 80, 50);
+		final JRadioButton easyButton   = new JRadioButton("", true);
+		easyButton.setBounds(100, 360 , 30, 14);
+		final JRadioButton normalButton = new JRadioButton("", false);
+		normalButton.setBounds(380, 360 , 30, 14);
+		final JRadioButton hardButton   = new JRadioButton("", false);
+		hardButton.setBounds(650, 360 , 30, 14);
 
 		
 		// Set radio buttons on the ButtonGroup 		 
@@ -105,8 +141,14 @@ public class OptionsActivity extends Activity {
 		diffOptionsP.add(hardButton);
 		
 		add(youOptionsL);
-	    add(new JLabel(Resize.scale(pic2.getImage(), 0.50)));
-	    add(new JLabel(Resize.scale(pic1.getImage(), 0.50)));
+	    add(youSizeL);
+	    add(youDiffL);
+	    add(fourL);
+	    add(sixL);
+	    add(eightL);
+	    add(easyL);
+	    add(normalL);
+	    add(hardL);
 		add(okayB);
 		add(fourButton);
 		add(sixButton);
@@ -116,12 +158,7 @@ public class OptionsActivity extends Activity {
 		add(hardButton);
 		
 		
-		
-		
-
-		
 		//returnData();
-		
 		
 		
 		//A new ACtion Listener is declared

@@ -15,7 +15,7 @@ public class PicsMapper {
 		PUZZLE_PICS_PATH+"girl.jpg",
 		PUZZLE_PICS_PATH+"himmel.jpg",
 		PUZZLE_PICS_PATH+"la.jpg",
-		PUZZLE_PICS_PATH+"nv.jpg",
+		PUZZLE_PICS_PATH+"ny.jpg",
 		PUZZLE_PICS_PATH+"pol.jpg",
 		PUZZLE_PICS_PATH+"silicon_chip.jpg",
 		PUZZLE_PICS_PATH+"simp.jpg"

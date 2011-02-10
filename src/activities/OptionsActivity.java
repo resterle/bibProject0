@@ -31,11 +31,9 @@ public class OptionsActivity extends Activity {
 		
 	
 
-		setLayout(null);  
+		//setLayout(null);  
 		
-		ImageIcon pic1=new ImageIcon(PicsMapper.TEXT_SIZE);
-		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
-		
+	
 		//Declaration of the Button
 		JButton okayB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		
@@ -51,9 +49,12 @@ public class OptionsActivity extends Activity {
 		//Declaration of the Labels
 		JLabel youOptionsL = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
 		youOptionsL.setBounds(250, 0 , 250, 100 );
- 		JLabel youSizeL    = new JLabel(new ImageIcon(pic1.getImage()));
+		setLayout(new GridLayout(6,6));
+		ImageIcon pic1=new ImageIcon(PicsMapper.TEXT_SIZE);
+ 		JLabel youSizeL    = new JLabel(new ImageIcon(pic1.getImage()),  JLabel.CENTER);
  		youSizeL.setBounds(250, 100 , 250, 100 );
-		JLabel youDiffL    = new JLabel(new ImageIcon(pic2.getImage()));
+ 		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
+		JLabel youDiffL    = new JLabel(new ImageIcon(pic2.getImage()),  JLabel.CENTER);
 		youDiffL.setBounds(250, 250 , 250, 100 );
 		
 		//declare RadioButtons for the size
@@ -104,8 +105,8 @@ public class OptionsActivity extends Activity {
 		diffOptionsP.add(hardButton);
 		
 		add(youOptionsL);
-	    add(new JLabel(Resize.scale(pic2.getImage(), 10)));
-	    add(new JLabel(Resize.scale(pic1.getImage(), 0.75)));
+	    add(new JLabel(Resize.scale(pic2.getImage(), 0.50)));
+	    add(new JLabel(Resize.scale(pic1.getImage(), 0.50)));
 		add(okayB);
 		add(fourButton);
 		add(sixButton);

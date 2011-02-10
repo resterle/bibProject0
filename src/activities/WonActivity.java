@@ -18,13 +18,16 @@ public class WonActivity extends Activity {
 		super(controller);
 	}
 	
+	public final static String PARAMS_NAME = "DefaultName";
+	public final static String PARAMS_TIME = "time";
+	
 	public void start(){
 		
 		//Grid Layout
 		setLayout(new GridLayout(2,1));
 		
 		//A JLabel for the username and time needed to win
-		JLabel youWonL = new JLabel("You won " + (String)params.getValue("name") + ". You made it in " + (String)params.getValue("time"));
+		JLabel youWonL = new JLabel("You won " + PARAMS_NAME + ". You made it in " + PARAMS_TIME);
 		add(youWonL);
 		
 		//Button with the Text: OK

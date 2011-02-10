@@ -36,6 +36,7 @@ public class PicsMapper {
 	public static final String RESHUFFLE_BUTTON = path+"push_button/reshuffle.png";
 	public static final String SHUFFLE_BUTTON = path+"push_button/shuffle.png";
 	public static final String GALLERY_BUTTON = path+"push_button/button_gallery.png";
+	public static final String CREDITS_BACKGROUNG = path+"background/Credits.jpg";
 	//GALLERY_BUTTONS
 	public static final String G_BACK_SMALL_BUTTON = path+"Gallery_button/g_back_small.png";
 	public static final String G_BACK_BUTTON = path+"Gallery_button/g_back.png";

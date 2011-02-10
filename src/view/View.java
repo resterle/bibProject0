@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -12,6 +13,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import model.PicsMapper;
 
 public class View extends JFrame{
@@ -21,32 +24,15 @@ public class View extends JFrame{
 	
 	private Image i;
 	
+	private JPanel jp;
+	
 	public View(String name){
 		super(name);
 		
-		try {
-			i = ImageIO.read(new File("pics/background/puzzle.png"));
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		i = toolkit.getImage(PicsMapper.BACKGROUND);
-		
-		//Bild laden veranlassen
-		MediaTracker tracker = new  MediaTracker(this);
-		//Bild dem Mediatracker hinzufügen
-		tracker.addImage(i,0);
-		//Bild laden
-		try {
-			tracker.waitForID(0);
-		}
-		catch(InterruptedException e) {
-			e.printStackTrace();
-		}
-		
 		mainCon = getContentPane();
+		jp = new JPanel();
+		jp.setBackground(Color.RED);
+		
 		
 		// Set default Windowparameters.
 	
@@ -68,11 +54,6 @@ public class View extends JFrame{
 	
 	public void update(){
 		mainCon.validate();
-	}
-	
-	@Override
-	public void paint(Graphics g) {
-		g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
 	}
 	
 }

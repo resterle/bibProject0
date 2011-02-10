@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import model.MainMenuModel;
 import model.PicsMapper;
@@ -27,6 +28,11 @@ public class QuitActivity extends Activity {
 		//GridLayout with 2 Buttons
 		setLayout(null);
 	
+		
+		
+		JLabel areYsure = new JLabel(new ImageIcon(PicsMapper.TEXT_AYS));
+		areYsure.setBounds(140, 100 , 500, 100 );
+		
 		int posY = 400;
 		int buttonHeight = 100;
 		int buttonWidth = 250;
@@ -57,6 +63,7 @@ public class QuitActivity extends Activity {
 			}
 		});
 		add(newYesB);
+		add(areYsure);
 	}
 	
 	

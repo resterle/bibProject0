@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import activities.ChoosePicActivity;
 import activities.CreditsActivity;
 import activities.GalleryActivity;
+import activities.GameActivity;
 import activities.HighscoreActivity;
 import activities.LoadingActivity;
 import activities.MenuActivity;
@@ -119,6 +120,12 @@ public class Controller {
 				view.startActivity(new ChoosePicActivity(this), params);
 			}
 
+		}
+		
+		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
+			pl.addParameter(GameActivity.PARAMS_PIC, params.getValue(GalleryActivity.RETURN_PIC));
+			view.startActivity(new GameActivity(this), pl);
+			
 		}
 		
 	}

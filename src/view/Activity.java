@@ -1,13 +1,24 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import model.PicsMapper;
 
 import controller.Controller;
 
 public abstract class Activity extends JPanel{
+	
+	Image i;
 	
 	// The Activity Class represents a single Panel of the Game;
 	
@@ -22,6 +33,15 @@ public abstract class Activity extends JPanel{
 	
 	public Activity(Controller controller){
 		this.controller = controller;
+		try {
+			i = ImageIO.read(new File("pics/background/puzzle.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		i = toolkit.getImage(PicsMapper.BACKGROUND);
 	}
 	
 	// The run method will be called from the View;
@@ -39,9 +59,9 @@ public abstract class Activity extends JPanel{
 		controller.returnData(this.getClass().getSimpleName(), returnParams);
 	}
 
-	public void start(Container pane) {
-		// TODO Auto-generated method stub
-		
+	@Override
+	public void paint(Graphics g) {
+		//g.drawImage(i , 0, 0, getWidth(), getHeight(), this);
 	}
 	
 	

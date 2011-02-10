@@ -28,11 +28,13 @@ public class OptionsActivity extends Activity {
 	
 	public void start(){
 		
-		ImageIcon pic1=new ImageIcon(PicsMapper.TEXT_SIZE);
-		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
+		
 	
 
 		setLayout(null);  
+		
+		ImageIcon pic1=new ImageIcon(PicsMapper.TEXT_SIZE);
+		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
 		
 		//Declaration of the Button
 		JButton okayB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
@@ -102,7 +104,7 @@ public class OptionsActivity extends Activity {
 		diffOptionsP.add(hardButton);
 		
 		add(youOptionsL);
-	    add(new JLabel(Resize.scale(pic2.getImage(), 0.75)));
+	    add(new JLabel(Resize.scale(pic2.getImage(), 10)));
 	    add(new JLabel(Resize.scale(pic1.getImage(), 0.75)));
 		add(okayB);
 		add(fourButton);

@@ -40,9 +40,11 @@ public class PlayernameActivity extends Activity {
 		
 		//Buttons declaration
 		JButton gallaryB = new JButton("Gallary");
+		gallaryB.setBounds(100, 100 , 250, 100 );
 		JButton ownPicB = new JButton("Use own Picture");
+		ownPicB.setBounds(100, 250 , 250, 100 );
 		JButton backB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
-		
+		backB.setBounds(250, 450 , 250, 100 );
 		//Label declaration
 		JLabel nameL = new JLabel("Enter your name: ");
 		

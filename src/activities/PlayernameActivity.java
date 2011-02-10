@@ -109,10 +109,6 @@ public class PlayernameActivity extends Activity {
 			}
 		});
 		
-		
-		
-		
-		
 	}
 	
 	

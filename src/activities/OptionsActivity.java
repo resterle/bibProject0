@@ -21,6 +21,9 @@ public class OptionsActivity extends Activity {
 	
 	public static final String RETURN_SIZE = "size";
 	public static final String RETURN_DIF = "dif";
+	
+	public static final String PARAMS_SIZE = "psize";
+	public static final String PARAMS_DIF = "pdif";
 
 	
 	public OptionsActivity(Controller controller) {
@@ -35,12 +38,6 @@ public class OptionsActivity extends Activity {
 		ImageButton okayB = new ImageButton(PicsMapper.OKAY_BUTTON);
 		okayB.setBounds(270, 450 , 250, 100 );
 
-		//Declaration of the different Panels
-		JPanel sizeP = new JPanel();
-		JPanel sizeOptionsP = new JPanel();		
-		JPanel diffP = new JPanel();
-		JPanel diffOptionsP = new JPanel();
-		
 		//Declaration of the Labels
 		JLabel youOptionsL = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
 		youOptionsL.setBounds(260, 0 , 250, 100 );
@@ -113,23 +110,8 @@ public class OptionsActivity extends Activity {
 		diffRB.add(normalButton);
 		diffRB.add(hardButton);
 		
-		//The Order of the Panels, Labels and Radio Buttons are declared 	
-		sizeP.setLayout(new GridLayout(2, 1));
-		sizeP.add(youSizeL);
-		sizeP.add(sizeOptionsP);
-		sizeOptionsP.setLayout(new GridLayout(1, 3));
-		sizeOptionsP.add(fourButton);
-		sizeOptionsP.add(sixButton);
-		sizeOptionsP.add(eightButton);
 		
-		diffP.setLayout(new GridLayout(2, 1));
-		diffP.add(youDiffL);
-		diffP.add(diffOptionsP);
-		diffOptionsP.setLayout(new GridLayout(1, 3));
-		diffOptionsP.add(easyButton);
-		diffOptionsP.add(normalButton);
-		diffOptionsP.add(hardButton);
-		
+		//adding all buttons and texts
 		add(youOptionsL);
 	    add(youSizeL);
 	    add(youDiffL);

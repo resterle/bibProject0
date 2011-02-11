@@ -129,13 +129,16 @@ public class Controller {
 		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
 			Image image = Resize.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
 			pl.addParameter(GameActivity.PARAMS_PIC, image);
+			pl.addParameter(GameActivity.PARAMS_DIF, model.getDifficulty());
+			pl.addParameter(GameActivity.PARAMS_SIZE, model.getSize());
 			view.startActivity(new GameActivity(this), pl);
 			
 		}
 		
 		else if(activityClass.equals(OptionsActivity.class.getSimpleName())){
 			model.setDifficulty((Integer) params.getValue(OptionsActivity.RETURN_DIF));
-			model.setsize((Integer) params.getValue(OptionsActivity.RETURN_SIZE));
+			model.setSize((Integer) params.getValue(OptionsActivity.RETURN_SIZE));
+			view.startActivity(new MenuActivity(this), null);
 		}
 		
 	}

@@ -87,11 +87,11 @@ public class GameModel {
 	private int size;
 
 
-	public int getsize() {
+	public int getSize() {
 		return size;
 	}
 
-	public void setsize(int size) {
+	public void setSize(int size) {
 		this.size = size;
 	}
 	

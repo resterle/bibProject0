@@ -21,6 +21,7 @@ public class OptionsActivity extends Activity {
 	
 	public static final String RETURN_SIZE = "size";
 	public static final String RETURN_DIF = "dif";
+
 	
 	public OptionsActivity(Controller controller) {
 		super(controller);

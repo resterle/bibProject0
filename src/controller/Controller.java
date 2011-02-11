@@ -7,13 +7,13 @@ import activities.ChoosePicActivity;
 import activities.CreditsActivity;
 import activities.GalleryActivity;
 import activities.GameActivity;
+import activities.Graphics;
 import activities.HighscoreActivity;
 import activities.LoadingActivity;
 import activities.MenuActivity;
 import activities.OptionsActivity;
 import activities.PlayernameActivity;
 import activities.QuitActivity;
-import activities.Resize;
 import view.ParameterList;
 import view.View;
 import model.GalleryModel;
@@ -127,7 +127,7 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
-			Image image = Resize.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
+			Image image = Graphics.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
 			pl.addParameter(GameActivity.PARAMS_PIC, image);
 			pl.addParameter(GameActivity.PARAMS_DIF, model.getDifficulty());
 			pl.addParameter(GameActivity.PARAMS_SIZE, model.getSize());

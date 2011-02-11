@@ -30,15 +30,10 @@ public class OptionsActivity extends Activity {
 	
 	public void start(){
 		
-		
-	
-
 		setLayout(null);  
 		
-	
 		//Declaration of the Button
 		ImageButton okayB = new ImageButton(PicsMapper.OKAY_BUTTON);
-		
 		okayB.setBounds(270, 450 , 250, 100 );
 
 		//Declaration of the different Panels
@@ -46,7 +41,6 @@ public class OptionsActivity extends Activity {
 		JPanel sizeOptionsP = new JPanel();		
 		JPanel diffP = new JPanel();
 		JPanel diffOptionsP = new JPanel();
-		
 		
 		//Declaration of the Labels
 		JLabel youOptionsL = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
@@ -77,21 +71,20 @@ public class OptionsActivity extends Activity {
 		JLabel eightL  = new JLabel(pic5);
 		eightL.setBounds(610, 181 , 100, 100 );
 		
-		ImageIcon pic6  = new ImageIcon(PicsMapper.TEXT_4x4);
+		ImageIcon pic6  = new ImageIcon(PicsMapper.TEXT_ESAY);
 		pic6 = Resize.scale(pic6.getImage(), 0.35);
- 		JLabel easyL  = new JLabel(pic3);
+ 		JLabel easyL  = new JLabel(pic6);
  		easyL.setBounds(60, 341 , 100, 100 );
  		
- 		ImageIcon pic7 =new ImageIcon(PicsMapper.TEXT_6x6);
+ 		ImageIcon pic7 =new ImageIcon(PicsMapper.TEXT_NORMAL);
  		pic7 = Resize.scale(pic7.getImage(), 0.35);
 		JLabel normalL   = new JLabel(pic7);
 		normalL .setBounds(340, 341 , 100, 100 );
 		
-		ImageIcon pic8 =new ImageIcon(PicsMapper.TEXT_8x8);
+		ImageIcon pic8 =new ImageIcon(PicsMapper.TEXT_HARD);
  		pic8 = Resize.scale(pic8.getImage(), 0.35);
-		JLabel hardL  = new JLabel(pic5);
+		JLabel hardL  = new JLabel(pic8);
 		hardL.setBounds(610, 341 , 100, 100 );
-		
 		
 		//declare RadioButtons for the size
 		final JRadioButton fourButton   = new JRadioButton("",true);
@@ -115,13 +108,11 @@ public class OptionsActivity extends Activity {
 		final JRadioButton hardButton   = new JRadioButton("", false);
 		hardButton.setBounds(650, 360 , 30, 14);
 
-		
 		// Set radio buttons on the ButtonGroup 		 
 		final ButtonGroup diffRB = new ButtonGroup();
 		diffRB.add(easyButton);
 		diffRB.add(normalButton);
 		diffRB.add(hardButton);
-		
 		
 		//The Order of the Panels, Labels and Radio Buttons are declared 	
 		sizeP.setLayout(new GridLayout(2, 1));
@@ -157,9 +148,7 @@ public class OptionsActivity extends Activity {
 		add(normalButton);
 		add(hardButton);
 		
-		
 		//returnData();
-		
 		
 		//A new ACtion Listener is declared
 		okayB.addActionListener(new ActionListener() {
@@ -181,7 +170,6 @@ public class OptionsActivity extends Activity {
 					}
 				}
 				
-				
 				ButtonModel sizeTest = sizeRB.getSelection();
 				if (fourButton.getModel() == sizeTest) {
 		            returnParams.addParameter("size", GameModel.SIZE_4X4);
@@ -195,16 +183,8 @@ public class OptionsActivity extends Activity {
 						returnParams.addParameter("size", GameModel.SIZE_8X8);
 					}
 				}
-				
 				returnData();
-				
 			}
 		});
-	
 	}
-
-
-	
-	
-
 }

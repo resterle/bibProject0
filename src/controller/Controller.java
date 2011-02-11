@@ -134,7 +134,8 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(OptionsActivity.class.getSimpleName())){
-			
+			model.setDifficulty((Integer) params.getValue(OptionsActivity.RETURN_DIF));
+			model.setsize((Integer) params.getValue(OptionsActivity.RETURN_SIZE));
 		}
 		
 	}

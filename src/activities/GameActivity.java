@@ -20,6 +20,7 @@ public class GameActivity extends Activity {
 		setLayout(new GridLayout(1, 1));
 		Image image = (Image)params.getValue(PARAMS_PIC);
 		add(new ImageButton(image));
+		System.out.println("size:"+);
 	}
 
 }

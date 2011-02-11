@@ -19,8 +19,8 @@ import controller.Controller;
 
 public class OptionsActivity extends Activity {
 	
-	public static final String REDURN_SIZE = "size";
-	public static final String REDURN_DIF = "dif";
+	public static final String RETURN_SIZE = "size";
+	public static final String RETURN_DIF = "dif";
 	
 	public OptionsActivity(Controller controller) {
 		super(controller);
@@ -165,7 +165,7 @@ public class OptionsActivity extends Activity {
 					
 				}
 				
-				returnParams.addParameter(REDURN_DIF, dif);
+				returnParams.addParameter(RETURN_DIF, dif);
 				
 				ButtonModel sizeTest = sizeRB.getSelection();
 				int size = GameModel.SIZE_4X4;
@@ -176,7 +176,7 @@ public class OptionsActivity extends Activity {
 					size = GameModel.SIZE_8X8;
 				}
 				
-				returnParams.addParameter(REDURN_SIZE, size);
+				returnParams.addParameter(RETURN_SIZE, size);
 				
 				returnData();
 			}

@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Image;
 import java.util.ArrayList;
 
 import activities.ChoosePicActivity;
@@ -12,6 +13,7 @@ import activities.MenuActivity;
 import activities.OptionsActivity;
 import activities.PlayernameActivity;
 import activities.QuitActivity;
+import activities.Resize;
 import view.ParameterList;
 import view.View;
 import model.GalleryModel;
@@ -123,7 +125,8 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
-			pl.addParameter(GameActivity.PARAMS_PIC, params.getValue(GalleryActivity.RETURN_PIC));
+			Image image = Resize.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
+			pl.addParameter(GameActivity.PARAMS_PIC, image);
 			view.startActivity(new GameActivity(this), pl);
 			
 		}

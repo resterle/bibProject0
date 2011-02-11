@@ -21,5 +21,16 @@ public class Resize {
         g2.dispose();
         return new ImageIcon(dst);
     }
+    
+    public static Image scale(Image src, int width, int height) {
+        int w = width;
+        int h = height;
+        int type = BufferedImage.TYPE_INT_RGB;
+        BufferedImage dst = new BufferedImage(w, h, type);
+        Graphics2D g2 = dst.createGraphics();
+        g2.drawImage(src, 0, 0, w, h, null);
+        g2.dispose();
+        return dst;
+    }
 	
 }

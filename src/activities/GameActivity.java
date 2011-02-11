@@ -18,7 +18,8 @@ public class GameActivity extends Activity {
 	@Override
 	public void start() {
 		setLayout(new GridLayout(1, 1));
-		add(new ImageButton((Image)params.getValue(PARAMS_PIC)));
+		Image image = (Image)params.getValue(PARAMS_PIC);
+		add(new ImageButton(image));
 	}
 
 }

@@ -64,16 +64,5 @@ public class PicsMapper {
 	public static final String TEXT_LOADING = path+"text/text_loading.png";
 	public static final String TEXT_HOW_TO = path+"text/text_how_to.png";
 
-	
-	//
-	
-	
-
-	
-	
-	
-
-	
-	
-	
+		
 }

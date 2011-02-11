@@ -23,7 +23,10 @@ import view.Activity;
 import view.ImageButton;
 
 public class OptionsActivity extends Activity {
-
+	
+	public static final String REDURN_SIZE = "size";
+	public static final String REDURN_DIF = "dif";
+	
 	public OptionsActivity(Controller controller) {
 		super(controller);
 	}
@@ -157,32 +160,29 @@ public class OptionsActivity extends Activity {
 				
 				//If questions to find out which both Radio Buttons are selected
 				ButtonModel diffTest = diffRB.getSelection();
-				if (easyButton.getModel() == diffTest) {
-		            returnParams.addParameter("difficulty", GameModel.DIFF_EASY);
+				int dif = GameModel.DIFF_EASY;
+				if (normalButton.getModel() == diffTest) {
+		            dif = GameModel.DIFF_NORMAL;
 				}
-				else
+				else if(hardButton.getModel() == diffTest)
 				{
-					if(normalButton.getModel() == diffTest){
-						returnParams.addParameter("difficulty", GameModel.DIFF_NORMAL);	
-					}
-					else{
-						returnParams.addParameter("difficulty", GameModel.DIFF_HARD);
-					}
+					dif = GameModel.DIFF_HARD;	
+					
 				}
 				
+				returnParams.addParameter(REDURN_DIF, dif);
+				
 				ButtonModel sizeTest = sizeRB.getSelection();
-				if (fourButton.getModel() == sizeTest) {
-		            returnParams.addParameter("size", GameModel.SIZE_4X4);
+				int size = GameModel.SIZE_4X4;
+				if(sixButton.getModel() == sizeTest){
+					size = GameModel.SIZE_6X6;	
 				}
-				else
-				{
-					if(sixButton.getModel() == sizeTest){
-						returnParams.addParameter("size", GameModel.SIZE_6X6);	
-					}
-					else{
-						returnParams.addParameter("size", GameModel.SIZE_8X8);
-					}
+				else if(eightButton.getModel() == sizeTest){
+					size = GameModel.SIZE_8X8;
 				}
+				
+				returnParams.addParameter(REDURN_SIZE, size);
+				
 				returnData();
 			}
 		});

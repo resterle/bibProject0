@@ -6,6 +6,10 @@ public class GameModel {
 	
 	// The Model Class to store the Applicationdata.
 	
+	public GameModel(){
+		pieceCount = SIZE_4X4;
+		difficulty = DIFF_EASY;
+	}
 	
 	// Path of the selected Picture.
 	

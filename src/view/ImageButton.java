@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +14,7 @@ import model.PicsMapper;
 
 public class ImageButton extends JButton {
 	
-	private BufferedImage image;
+	private Image image;
 	
 	public ImageButton(String file){
 		setRolloverEnabled(false);
@@ -22,6 +23,10 @@ public class ImageButton extends JButton {
 		} catch (IOException e) {
 			System.out.println("INFO: Can't load "+file);
 		}
+	}
+	
+	public ImageButton(Image image){
+		this.image = image;
 	}
 	
 	@Override

@@ -6,8 +6,11 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import model.PicsMapper;
+
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class CreditsActivity extends Activity {
 
@@ -17,7 +20,14 @@ public class CreditsActivity extends Activity {
 
 	public void start(){
 		
-		JButton newBackB = new JButton(new ImageIcon("pics/credits.png"));
+		setLayout(null);
+		
+		ImageButton newBackB = new ImageButton(PicsMapper.CREDITS_BACKGROUNG);
+		newBackB.setBounds(0, 0, 800, 600);
+		
+		
+		add(newBackB);
+		
 		newBackB.addActionListener(new ActionListener() {
 			
 		

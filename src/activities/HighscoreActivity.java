@@ -14,6 +14,7 @@ import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class HighscoreActivity extends Activity{
 
@@ -31,15 +32,12 @@ public class HighscoreActivity extends Activity{
 		setLayout(null);
 		
 		JLabel optionLabel = new JLabel(new ImageIcon(PicsMapper.TEXT_HIGHSCORE));
-		optionLabel.setBounds(250, 0 , 250, 100 );
-		JButton okButton = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
-		
-		okButton.setBounds(280, 450 , 250, 100 );
+		optionLabel.setBounds(260, 0 , 250, 100 );
+		ImageButton okButton = new ImageButton(PicsMapper.OKAY_BUTTON);
+		okButton.setBounds(270, 450 , 250, 100 );
 		
 		ArrayList<String> users = (ArrayList<String>) params.getValue(PARAM_USERS);
 		ArrayList<Integer> scores = (ArrayList<Integer>) params.getValue(PARAM_SCORES);
-		
-		
 		
 		okButton.addActionListener(new ActionListener() {
 			
@@ -59,7 +57,7 @@ public class HighscoreActivity extends Activity{
 			add(highscoreLabel);
 			add(okButton);
 		}
-		
+	
 	}
 
 }

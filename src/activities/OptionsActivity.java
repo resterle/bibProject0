@@ -1,29 +1,28 @@
 package activities;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 import model.GameModel;
 import model.PicsMapper;
-
-import controller.Controller;
 import view.Activity;
 import view.ImageButton;
+import controller.Controller;
 
 public class OptionsActivity extends Activity {
+	
+	public static final String RETURN_SIZE = "size";
+	public static final String RETURN_DIF = "dif";
 
+	
 	public OptionsActivity(Controller controller) {
 		super(controller);
 	}
@@ -157,32 +156,29 @@ public class OptionsActivity extends Activity {
 				
 				//If questions to find out which both Radio Buttons are selected
 				ButtonModel diffTest = diffRB.getSelection();
-				if (easyButton.getModel() == diffTest) {
-		            returnParams.addParameter("difficulty", GameModel.DIFF_EASY);
+				int dif = GameModel.DIFF_EASY;
+				if (normalButton.getModel() == diffTest) {
+		            dif = GameModel.DIFF_NORMAL;
 				}
-				else
+				else if(hardButton.getModel() == diffTest)
 				{
-					if(normalButton.getModel() == diffTest){
-						returnParams.addParameter("difficulty", GameModel.DIFF_NORMAL);	
-					}
-					else{
-						returnParams.addParameter("difficulty", GameModel.DIFF_HARD);
-					}
+					dif = GameModel.DIFF_HARD;	
+					
 				}
 				
+				returnParams.addParameter(RETURN_DIF, dif);
+				
 				ButtonModel sizeTest = sizeRB.getSelection();
-				if (fourButton.getModel() == sizeTest) {
-		            returnParams.addParameter("size", GameModel.SIZE_4X4);
+				int size = GameModel.SIZE_4X4;
+				if(sixButton.getModel() == sizeTest){
+					size = GameModel.SIZE_6X6;	
 				}
-				else
-				{
-					if(sixButton.getModel() == sizeTest){
-						returnParams.addParameter("size", GameModel.SIZE_6X6);	
-					}
-					else{
-						returnParams.addParameter("size", GameModel.SIZE_8X8);
-					}
+				else if(eightButton.getModel() == sizeTest){
+					size = GameModel.SIZE_8X8;
 				}
+				
+				returnParams.addParameter(RETURN_SIZE, size);
+				
 				returnData();
 			}
 		});

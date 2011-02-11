@@ -30,7 +30,7 @@ public class HighscoreActivity extends Activity{
 		
 		setLayout(null);
 		
-		JLabel optionLabel = new JLabel(new ImageIcon(PicsMapper.TEXT_OPTION));
+		JLabel optionLabel = new JLabel(new ImageIcon(PicsMapper.TEXT_HIGHSCORE));
 		optionLabel.setBounds(250, 0 , 250, 100 );
 		JButton okButton = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
 		

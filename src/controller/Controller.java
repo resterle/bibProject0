@@ -1,7 +1,11 @@
 package controller;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 import activities.ChoosePicActivity;
 import activities.CreditsActivity;
@@ -126,13 +130,18 @@ public class Controller {
 
 		}
 		
+		else if(activityClass.equals(ChoosePicActivity.class.getSimpleName())){
+			try {
+				Image img = ImageIO.read(new File((String) params.getValue(ChoosePicActivity.RETURN_PATH)));
+				startGame(img);
+			} catch (IOException e) {
+				view.startActivity(new MenuActivity(this), null);
+			}
+		}
+		
 		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
 			Image image = Graphics.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
-			pl.addParameter(GameActivity.PARAMS_PIC, image);
-			pl.addParameter(GameActivity.PARAMS_DIF, model.getDifficulty());
-			pl.addParameter(GameActivity.PARAMS_SIZE, model.getSize());
-			view.startActivity(new GameActivity(this), pl);
-			
+			startGame(image);
 		}
 		
 		else if(activityClass.equals(OptionsActivity.class.getSimpleName())){
@@ -141,6 +150,14 @@ public class Controller {
 			view.startActivity(new MenuActivity(this), null);
 		}
 		
+	}
+	
+	private void startGame(Image img){
+		ParameterList pl = new ParameterList();
+		pl.addParameter(GameActivity.PARAMS_PIC, img);
+		pl.addParameter(GameActivity.PARAMS_DIF, model.getDifficulty());
+		pl.addParameter(GameActivity.PARAMS_SIZE, model.getSize());
+		view.startActivity(new GameActivity(this), pl);
 	}
 	
 }

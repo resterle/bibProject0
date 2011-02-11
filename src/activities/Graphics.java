@@ -56,19 +56,13 @@ public class Graphics {
         int pWith = width/pices;
         int pHeight = height/pices;
         
-        int x = 0;
-        int y = 0;
-        
         for(int i=0; i<(pices); i++){
         	for(int j=0; j<(pices); j++){
-            	
+            	returnPics.add(dst.getSubimage(j*pWith, i*pHeight, pWith, pHeight));
             }
         }
         
-        dst.getSubimage(0, 0, 10, 10);
-        
-        
-        return null;
+        return returnPics;
     }
 	
 }

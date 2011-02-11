@@ -58,6 +58,7 @@ public class ChoosePicActivity extends Activity {
 			public void actionPerformed(ActionEvent e) {
 			
 				returnParams.addParameter(RETURN_PATH, playerName.getText());	
+				returnData();
 				
 			}
 		});

@@ -43,42 +43,42 @@ public class OptionsActivity extends Activity {
 		youOptionsL.setBounds(260, 0 , 250, 100 );
 		
 		ImageIcon pic1 = new ImageIcon(PicsMapper.TEXT_SIZE);
-		pic1 = Resize.scale(pic1.getImage(), 0.55);
+		pic1 = Graphics.scale(pic1.getImage(), 0.55);
  		JLabel youSizeL    = new JLabel(pic1);
  		youSizeL.setBounds(270, 100 , 250, 100 );
  		
  		ImageIcon pic2=new ImageIcon(PicsMapper.TEXT_DIFFICULTY);
- 		pic2 = Resize.scale(pic2.getImage(), 0.55);
+ 		pic2 = Graphics.scale(pic2.getImage(), 0.55);
 		JLabel youDiffL    = new JLabel(pic2);
 		youDiffL.setBounds(270, 265 , 250, 100 );
 		
 		ImageIcon pic3  = new ImageIcon(PicsMapper.TEXT_4x4);
-		pic3 = Resize.scale(pic3.getImage(), 0.35);
+		pic3 = Graphics.scale(pic3.getImage(), 0.35);
  		JLabel fourL  = new JLabel(pic3);
  		fourL.setBounds(60, 181 , 100, 100 );
  		
  		ImageIcon pic4 =new ImageIcon(PicsMapper.TEXT_6x6);
- 		pic4 = Resize.scale(pic4.getImage(), 0.35);
+ 		pic4 = Graphics.scale(pic4.getImage(), 0.35);
 		JLabel sixL    = new JLabel(pic4);
 		sixL.setBounds(340, 181 , 100, 100 );
 		
 		ImageIcon pic5 =new ImageIcon(PicsMapper.TEXT_8x8);
- 		pic5 = Resize.scale(pic5.getImage(), 0.35);
+ 		pic5 = Graphics.scale(pic5.getImage(), 0.35);
 		JLabel eightL  = new JLabel(pic5);
 		eightL.setBounds(610, 181 , 100, 100 );
 		
 		ImageIcon pic6  = new ImageIcon(PicsMapper.TEXT_ESAY);
-		pic6 = Resize.scale(pic6.getImage(), 0.35);
+		pic6 = Graphics.scale(pic6.getImage(), 0.35);
  		JLabel easyL  = new JLabel(pic6);
  		easyL.setBounds(60, 341 , 100, 100 );
  		
  		ImageIcon pic7 =new ImageIcon(PicsMapper.TEXT_NORMAL);
- 		pic7 = Resize.scale(pic7.getImage(), 0.35);
+ 		pic7 = Graphics.scale(pic7.getImage(), 0.35);
 		JLabel normalL   = new JLabel(pic7);
 		normalL .setBounds(340, 341 , 100, 100 );
 		
 		ImageIcon pic8 =new ImageIcon(PicsMapper.TEXT_HARD);
- 		pic8 = Resize.scale(pic8.getImage(), 0.35);
+ 		pic8 = Graphics.scale(pic8.getImage(), 0.35);
 		JLabel hardL  = new JLabel(pic8);
 		hardL.setBounds(610, 341 , 100, 100 );
 		

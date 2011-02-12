@@ -1,15 +1,11 @@
 package model;
 
+import java.awt.Image;
+import java.util.ArrayList;
+
 import view.ParameterList;
 
 public class GameModel {
-	
-	// The Model Class to store the Applicationdata.
-	
-	public GameModel(){
-		pieceCount = SIZE_4X4;
-		difficulty = DIFF_EASY;
-	}
 	
 	// Path of the selected Picture.
 	
@@ -23,22 +19,18 @@ public class GameModel {
 		this.picturePath = picturePath;
 	}
 	
-	// The number of pieces.
-
-	private int pieceCount;
+	private ArrayList<Image> image;
 	
-	private ParameterList higescrors;
-	
-	public int getPieceCount() {
-		return pieceCount;
+	public ArrayList<Image> getImage() {
+		return image;
 	}
 
-	public void setPieceCount(int pieceCount) {
-		this.pieceCount = pieceCount;
+	public void setImage(ArrayList<Image> image) {
+		this.image = image;
 	}
 
 	// The Player's name with geter's and setter's.
-	private String playerName; 
+	private String playerName = "not Set"; 
 
 	public String getPlayerName() {
 		return playerName;
@@ -50,24 +42,24 @@ public class GameModel {
 	
 	// The time in seconds the round takes. 
 	
-	private int starTime;
+	private int time = 0;
 
 
 	public int getRoundTime() {
-		return starTime;
+		return time;
 	}
 
 	public void setRoundTime(int roundTime) {
-		this.starTime = roundTime;
+		this.time = roundTime;
 	} 
 	
 	// The difficulty influenced the mix of the pieces.
 	
-	public final static int DIFF_EASY = 0;
-	public final static int DIFF_NORMAL = 1;
-	public final static int DIFF_HARD = 2;
+	public final static int DIFF_EASY = 50;
+	public final static int DIFF_NORMAL = 100;
+	public final static int DIFF_HARD = 500;
 	
-	private int difficulty;
+	private int difficulty = DIFF_EASY;
 
 
 	public int getDifficulty() {
@@ -80,11 +72,11 @@ public class GameModel {
 	
 	//THe size influence the count of pieces in which the picture is sliced
 	
-	public final static int SIZE_4X4 = 0;
-	public final static int SIZE_6X6 = 1;
-	public final static int SIZE_8X8 = 2;
+	public final static int SIZE_4X4 = 4;
+	public final static int SIZE_6X6 = 6;
+	public final static int SIZE_8X8 = 8;
 	
-	private int size;
+	private int size = SIZE_4X4;
 
 
 	public int getSize() {
@@ -95,5 +87,44 @@ public class GameModel {
 		this.size = size;
 	}
 	
+	private ArrayList<Image> picPices;
+
+	public ArrayList<Image> getPicPices() {
+		return picPices;
+	}
+
+	public void setPicPices(ArrayList<Image> picPices) {
+		this.picPices = picPices;
+	}
+	
+	private int[] sort;
+
+	public int[] getSort() {
+		return sort;
+	}
+
+	public void setSort(int[] sort) {
+		this.sort = sort;
+	}
+	
+	private int black;
+
+	public int getBlack() {
+		return black;
+	}
+
+	public void setBlack(int black) {
+		this.black = black;
+	}
+	
+	private ArrayList<Integer> neighbors;
+
+	public ArrayList<Integer> getNeighbors() {
+		return neighbors;
+	}
+
+	public void setNeighbors(ArrayList<Integer> neighbors) {
+		this.neighbors = neighbors;
+	}
 	
 }

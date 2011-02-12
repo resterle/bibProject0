@@ -2,7 +2,12 @@ package activities;
 
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.swing.JLabel;
 
 import model.GameModel;
 
@@ -13,8 +18,11 @@ import view.ImageButton;
 public class GameActivity extends Activity {
 	
 	public static final String PARAMS_PIC = "pic";
-	public static final String PARAMS_SIZE = "size";
-	public static final String PARAMS_DIF = "dif";
+	public static final String PARAMS_SORT = "sort";
+	public static final String PARAMS_BLACK = "black";
+	public static final String PARAMS_NEIGHBORS = "neighbors";
+	
+	public static final String RETURN_SELECTED = "selected";
 	
 	public GameActivity(Controller controller) {
 		super(controller);
@@ -23,24 +31,47 @@ public class GameActivity extends Activity {
 	@Override
 	public void start() {
 		
-		int size = 4;
+		ArrayList<Image> pics = (ArrayList<Image>) params.getValue(PARAMS_PIC);
 		
-		switch((Integer)params.getValue(PARAMS_SIZE)){
-			case GameModel.SIZE_6X6:
-				size = 6;
-			break;
-			case GameModel.SIZE_8X8:
-				size = 8;
-			break;
-		}
+		int black = (Integer)params.getValue(PARAMS_BLACK);
+		int[] sort = (int[]) params.getValue(PARAMS_SORT);
+		ArrayList<Integer> neighbors = (ArrayList<Integer>) params.getValue(PARAMS_NEIGHBORS);
 		
-		ArrayList<Image> pics = Graphics.subImage((Image) params.getValue(PARAMS_PIC), (Integer)params.getValue(PARAMS_SIZE), 790, 550);
+		int size = (int) Math.sqrt(sort.length+1);
 		
 		setLayout(new GridLayout(size, size));
 		
+		int a = 0;
+		Iterator z = neighbors.iterator();
+		while(z.hasNext())
+			System.out.println("n"+z.next());
+		System.out.println("b"+black);
+		
 		for(int i=0; i<(size*size); i++){
-			add(new ImageButton(pics.get(i)));
+			final Integer r = new Integer(i);
+			ImageButton ib = null;
+			if(black==i){
+				add(new JLabel("X"));
+			}
+			else{
+				ib = new ImageButton(pics.get(sort[i]));
+				add(ib);
+			}
+			if(neighbors.contains(i)){
+				ib.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						returnParams.addParameter(RETURN_SELECTED, r);
+						returnData();
+					}
+				});
+			}
 		}
+		
+	}
+	
+	private void draw(){
 		
 	}
 

@@ -18,8 +18,10 @@ import activities.MenuActivity;
 import activities.OptionsActivity;
 import activities.PlayernameActivity;
 import activities.QuitActivity;
+import activities.WonActivity;
 import view.ParameterList;
 import view.View;
+import model.Counter;
 import model.GalleryModel;
 import model.GameModel;
 import model.MainMenuModel;
@@ -31,6 +33,7 @@ public class Controller {
 	private GameModel model;
 	private View view;
 	private GalleryModel galleryModel;
+	private Counter counter;
 	
 	// Constructor
 	
@@ -132,8 +135,9 @@ public class Controller {
 		
 		else if(activityClass.equals(ChoosePicActivity.class.getSimpleName())){
 			try {
-				Image img = ImageIO.read(new File((String) params.getValue(ChoosePicActivity.RETURN_PATH)));
-				startGame(img);
+				Image image = ImageIO.read(new File((String) params.getValue(ChoosePicActivity.RETURN_PATH)));
+				model.setImage(Graphics.subImage(image, model.getSize(), 700, 500));
+				startGame();
 			} catch (IOException e) {
 				view.startActivity(new MenuActivity(this), null);
 			}
@@ -141,7 +145,8 @@ public class Controller {
 		
 		else if(activityClass.equals(GalleryActivity.class.getSimpleName())){
 			Image image = Graphics.scale((Image) params.getValue(GalleryActivity.RETURN_PIC), view.getWidth(), view.getHeight());
-			startGame(image);
+			model.setImage(Graphics.subImage(Graphics.scale(image, 800, 600), model.getSize(), 700, 500));
+			startGame();
 		}
 		
 		else if(activityClass.equals(OptionsActivity.class.getSimpleName())){
@@ -150,14 +155,115 @@ public class Controller {
 			view.startActivity(new MenuActivity(this), null);
 		}
 		
+		else if(activityClass.equals(GameActivity.class.getSimpleName())){
+			int[] sort = model.getSort();
+			int temp = sort[model.getBlack()];
+			sort[model.getBlack()]=sort[(Integer) params.getValue(GameActivity.RETURN_SELECTED)];
+			sort[(Integer) params.getValue(GameActivity.RETURN_SELECTED)]=temp;
+			model.setBlack((Integer) params.getValue(GameActivity.RETURN_SELECTED));
+			model.setSort(sort);
+			model.setNeighbors(getNeighbors());
+			pl.addParameter(GameActivity.PARAMS_PIC, model.getImage());
+			pl.addParameter(GameActivity.PARAMS_BLACK, model.getBlack());
+			pl.addParameter(GameActivity.PARAMS_SORT, model.getSort());
+			pl.addParameter(GameActivity.PARAMS_NEIGHBORS, model.getNeighbors());
+			boolean t = true;
+			for(int i=0; i<sort.length; i++){
+				if(i!=sort[i]){
+					t=false;
+					break;
+				}
+			}
+			if(t){
+				model.setRoundTime(counter.getCount());
+				pl.addParameter(WonActivity.PARAMS_NAME, model.getPlayerName());
+				pl.addParameter(WonActivity.PARAMS_TIME, model.getRoundTime());
+				view.startActivity(new WonActivity(this), pl);
+			}
+			else
+				view.startActivity(new GameActivity(this), pl);
+			
+		}
+		
+		else if(activityClass.equals(WonActivity.class.getSimpleName()))
+			start();
+		
 	}
 	
-	private void startGame(Image img){
+	private void startGame(){
+		mix();
 		ParameterList pl = new ParameterList();
-		pl.addParameter(GameActivity.PARAMS_PIC, img);
-		pl.addParameter(GameActivity.PARAMS_DIF, model.getDifficulty());
-		pl.addParameter(GameActivity.PARAMS_SIZE, model.getSize());
+		pl.addParameter(GameActivity.PARAMS_PIC, model.getImage());
+		pl.addParameter(GameActivity.PARAMS_BLACK, model.getBlack());
+		pl.addParameter(GameActivity.PARAMS_SORT, model.getSort());
+		pl.addParameter(GameActivity.PARAMS_NEIGHBORS, model.getNeighbors());
+		counter = new Counter();
+		counter.start();
 		view.startActivity(new GameActivity(this), pl);
+	}
+	
+	private void mix(){
+		
+		
+		int s = model.getSize();
+		
+		int[] mix = new int[s*s];
+		int black = (s*s)-1;
+		
+		model.setBlack(black);
+		
+		for(int i=0; i<s*s; i++){
+			mix[i]=i;
+		}
+		
+		ArrayList<Integer> neighbors = null;
+		
+		for(int i=0; i<model.getDifficulty(); i++){
+			
+			neighbors = getNeighbors();
+			int q = (int) (Math.random()*100);
+			int r = 0;
+			for(int j=0; j<q; j++){
+				r = (int) (Math.random()*neighbors.size());
+			}
+			int n = neighbors.get(r);
+			int temp = mix[black];
+			mix[black]=mix[n];
+			mix[n]=temp;
+			black =n;
+			model.setBlack(black);
+			System.out.println(black);
+		}
+		
+		model.setSort(mix);
+		model.setBlack(black);
+		model.setNeighbors(getNeighbors());
+		
+	}
+	
+	private ArrayList<Integer> getNeighbors(){
+		
+		int s = model.getSize();
+		
+		int black = model.getBlack();
+		
+		ArrayList<Integer> neighbors = new ArrayList<Integer>();
+		
+		if((black%s)!=0){
+				neighbors.add(black-1);
+		}
+		if(((black+1)%s)!=0){
+				neighbors.add(black+1);
+		}
+		if(black+1>s){
+				neighbors.add(black-s);
+		}
+		if(black<((s*s)-s)){
+				neighbors.add(black+s);
+		}
+		
+		return neighbors;
+		
 	}
 	
 }

@@ -40,7 +40,7 @@ public class GalleryActivity extends Activity {
 		
 		for(int i=0; i<9; i++){
 			final Image image = pics.get(i);
-			ImageButton ib = new ImageButton(image);
+			ImageButton ib = new ImageButton(Graphics.scale(image, 200, 100));
 			ib.addActionListener(new ActionListener() {
 				
 				@Override

@@ -43,15 +43,7 @@ public class Graphics {
         
         ArrayList<Image> returnPics = new ArrayList<Image>();
         
-        int pices = 4;
-        switch(size){
-        	case GameModel.SIZE_6X6:
-        		pices = 6;
-        		break;
-        	case GameModel.SIZE_8X8:
-        		pices = 8;
-        		break;
-        }
+        int pices = size;
         
         int pWith = width/pices;
         int pHeight = height/pices;

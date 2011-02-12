@@ -27,7 +27,7 @@ public class WonActivity extends Activity {
 		setLayout(new GridLayout(2,1));
 		
 		//A JLabel for the username and time needed to win
-		JLabel youWonL = new JLabel("You won " + PARAMS_NAME + ". You made it in " + PARAMS_TIME);
+		JLabel youWonL = new JLabel("You won " + params.getValue(PARAMS_NAME) + ". You made it in " + params.getValue(PARAMS_TIME) + " seconds!");
 		add(youWonL);
 		
 		//Button with the Text: OK

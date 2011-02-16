@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import model.GameModel;
+import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
@@ -31,6 +33,15 @@ public class GameActivity extends Activity {
 	@Override
 	public void start() {
 		
+		setLayout(null);
+		
+		JPanel bilder = new JPanel();		
+		JPanel buttons = new JPanel();
+		ImageButton back = new ImageButton(PicsMapper.BLACK_BACK_BUTTON);
+		ImageButton mix = new ImageButton(PicsMapper.RESHUFFLE_BUTTON);
+		JLabel time = new JLabel();
+	
+		
 		ArrayList<Image> pics = (ArrayList<Image>) params.getValue(PARAMS_PIC);
 		
 		int black = (Integer)params.getValue(PARAMS_BLACK);
@@ -39,23 +50,29 @@ public class GameActivity extends Activity {
 		
 		int size = (int) Math.sqrt(sort.length+1);
 		
-		setLayout(new GridLayout(size, size));
+		bilder.setLayout(new GridLayout(size, size));
+		buttons.setLayout(new GridLayout(1, 3));
+		
+		bilder.setBounds(0, 0, 800, 500);
+		buttons.setBounds(0, 520, 800, 100);
+		
+		buttons.add(back);
+		buttons.add(mix);
+		buttons.add(time);
 		
 		int a = 0;
 		Iterator z = neighbors.iterator();
 		while(z.hasNext())
-			System.out.println("n"+z.next());
-		System.out.println("b"+black);
 		
 		for(int i=0; i<(size*size); i++){
 			final Integer r = new Integer(i);
 			ImageButton ib = null;
 			if(black==i){
-				add(new JLabel("X"));
+				bilder.add(new JLabel("X"));
 			}
 			else{
 				ib = new ImageButton(pics.get(sort[i]));
-				add(ib);
+				bilder.add(ib);
 			}
 			if(neighbors.contains(i)){
 				ib.addActionListener(new ActionListener() {
@@ -68,6 +85,9 @@ public class GameActivity extends Activity {
 				});
 			}
 		}
+		
+		add(bilder);
+		add(buttons);
 		
 	}
 	

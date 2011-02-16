@@ -72,7 +72,7 @@ public class GameModel {
 	
 	//THe size influence the count of pieces in which the picture is sliced
 	
-	public final static int SIZE_4X4 = 4;
+	public final static int SIZE_4X4 = 2;
 	public final static int SIZE_6X6 = 6;
 	public final static int SIZE_8X8 = 8;
 	

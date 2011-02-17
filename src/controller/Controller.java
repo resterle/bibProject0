@@ -34,6 +34,7 @@ public class Controller {
 	private View view;
 	private GalleryModel galleryModel;
 	private Counter counter;
+	private GameActivity gameActivity;
 	
 	// Constructor
 	
@@ -156,6 +157,14 @@ public class Controller {
 		}
 		
 		else if(activityClass.equals(GameActivity.class.getSimpleName())){
+			if(params.getValue(GameActivity.RETURN_SELECTED).equals(GameActivity.RETURN_BACK)){
+				view.startActivity(new MenuActivity(this), null);
+				return;
+			}
+			if(params.getValue(GameActivity.RETURN_SELECTED).equals(GameActivity.RETURN_SHUFFLE)){
+				startGame();
+				return;
+			}
 			int[] sort = model.getSort();
 			int temp = sort[model.getBlack()];
 			sort[model.getBlack()]=sort[(Integer) params.getValue(GameActivity.RETURN_SELECTED)];
@@ -180,8 +189,9 @@ public class Controller {
 				pl.addParameter(WonActivity.PARAMS_TIME, model.getRoundTime());
 				view.startActivity(new WonActivity(this), pl);
 			}
-			else
-				view.startActivity(new GameActivity(this), pl);
+			else{
+				view.startActivity(gameActivity, pl);
+			}
 			
 		}
 		
@@ -197,9 +207,10 @@ public class Controller {
 		pl.addParameter(GameActivity.PARAMS_BLACK, model.getBlack());
 		pl.addParameter(GameActivity.PARAMS_SORT, model.getSort());
 		pl.addParameter(GameActivity.PARAMS_NEIGHBORS, model.getNeighbors());
-		counter = new Counter();
+		gameActivity = new GameActivity(this);
+		counter = new Counter(model, gameActivity);
 		counter.start();
-		view.startActivity(new GameActivity(this), pl);
+		view.startActivity(gameActivity, pl);
 	}
 	
 	private void mix(){

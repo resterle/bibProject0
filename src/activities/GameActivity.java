@@ -25,6 +25,10 @@ public class GameActivity extends Activity {
 	public static final String PARAMS_NEIGHBORS = "neighbors";
 	
 	public static final String RETURN_SELECTED = "selected";
+	public static final String RETURN_SHUFFLE = "shuffle";
+	public static final String RETURN_BACK = "back";
+	
+	private JLabel time;
 	
 	public GameActivity(Controller controller) {
 		super(controller);
@@ -38,9 +42,27 @@ public class GameActivity extends Activity {
 		JPanel bilder = new JPanel();		
 		JPanel buttons = new JPanel();
 		ImageButton back = new ImageButton(PicsMapper.BLACK_BACK_BUTTON);
+		back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter(RETURN_SELECTED, RETURN_BACK);
+				returnData();
+			}
+		});
 		ImageButton mix = new ImageButton(PicsMapper.RESHUFFLE_BUTTON);
-		JLabel time = new JLabel();
-	
+		mix.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				returnParams.addParameter(RETURN_SELECTED, RETURN_SHUFFLE);
+				returnData();
+			}
+		});
+		time = new JLabel("0");
+		
+		add(bilder);
+		add(buttons);
 		
 		ArrayList<Image> pics = (ArrayList<Image>) params.getValue(PARAMS_PIC);
 		
@@ -54,21 +76,21 @@ public class GameActivity extends Activity {
 		buttons.setLayout(new GridLayout(1, 3));
 		
 		bilder.setBounds(0, 0, 800, 500);
-		buttons.setBounds(0, 520, 800, 100);
+		buttons.setBounds(0, 485, 800, 100);
 		
 		buttons.add(back);
 		buttons.add(mix);
 		buttons.add(time);
 		
-		int a = 0;
 		Iterator z = neighbors.iterator();
 		while(z.hasNext())
-		
+		z.next();
 		for(int i=0; i<(size*size); i++){
+			
 			final Integer r = new Integer(i);
 			ImageButton ib = null;
 			if(black==i){
-				bilder.add(new JLabel("X"));
+				bilder.add(new ImageButton(PicsMapper.BACKGROUND));
 			}
 			else{
 				ib = new ImageButton(pics.get(sort[i]));
@@ -85,14 +107,11 @@ public class GameActivity extends Activity {
 				});
 			}
 		}
-		
-		add(bilder);
-		add(buttons);
-		
 	}
 	
-	private void draw(){
-		
+	public void setTime(int t){
+		time.setText("Time:" + t);
+		validate();
 	}
 
 }

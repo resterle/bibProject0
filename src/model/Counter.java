@@ -1,8 +1,17 @@
 package model;
 
+import activities.GameActivity;
+
 public class Counter extends Thread {
+
+	private int count;
+	private GameModel m;
+	GameActivity ga;
 	
-	private int count = 0;
+	public Counter(GameModel m, GameActivity ga){
+		this.m=m;
+		count = m.getRoundTime();
+	}
 	
 	@Override
 	public void run() {
@@ -14,6 +23,9 @@ public class Counter extends Thread {
 				e.printStackTrace();
 			}
 			count++;
+			m.setRoundTime(count);
+			System.out.println(ga);
+			ga.setTime(count);
 		}
 	}
 	

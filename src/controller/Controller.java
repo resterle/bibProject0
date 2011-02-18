@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+
 import activities.ChoosePicActivity;
 import activities.CreditsActivity;
 import activities.GalleryActivity;
@@ -24,6 +30,7 @@ import view.View;
 import model.Counter;
 import model.GalleryModel;
 import model.GameModel;
+import model.Highscore;
 import model.MainMenuModel;
 
 public class Controller {
@@ -265,5 +272,21 @@ public class Controller {
 		return neighbors;
 		
 	}
+	
+	private ArrayList<Highscore> loadScore(){
+		SAXReader reader = new SAXReader();
+		Document doc = null;
+		try {
+			doc = reader.read(GameModel.HIGHSCORE_FILE);
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			System.out.println("INFO: Error while reading the highscore.");
+		}
+		if(null==doc){
+			doc = DocumentHelper.createDocument();
+			Node root = doc.addElement("highscore");
+		}
+		return null;
+	} 
 	
 }

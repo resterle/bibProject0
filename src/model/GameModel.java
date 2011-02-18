@@ -55,9 +55,9 @@ public class GameModel {
 	
 	// The difficulty influenced the mix of the pieces.
 	
-	public final static int DIFF_EASY = 50;
-	public final static int DIFF_NORMAL = 100;
-	public final static int DIFF_HARD = 500;
+	public final static int DIFF_EASY = 20;
+	public final static int DIFF_NORMAL = 50;
+	public final static int DIFF_HARD = 200;
 	
 	private int difficulty = DIFF_EASY;
 
@@ -126,5 +126,7 @@ public class GameModel {
 	public void setNeighbors(ArrayList<Integer> neighbors) {
 		this.neighbors = neighbors;
 	}
+	
+	public static final String HIGHSCORE_FILE = "score/score.xml";
 	
 }

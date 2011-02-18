@@ -4,8 +4,11 @@ import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 
+import model.PicsMapper;
+
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 import view.ParameterList;
 
 public class LoadingActivity extends Activity{
@@ -18,8 +21,10 @@ public class LoadingActivity extends Activity{
 	
 	@Override
 	public void start() {
-		setLayout(new GridLayout(1, 1));
-		add(new JLabel((String) params.getValue(PARAM_MESSAGE)));
+		setLayout(null);
+		ImageButton loading = new ImageButton(PicsMapper.TEXT_LOADING);
+		loading.setBounds(280, 225, 300, 300);
+		add(loading);
 	}
 	
 }

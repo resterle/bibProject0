@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -14,12 +15,14 @@ import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
+import view.ImageButton;
 
 public class PlayernameActivity extends Activity {
 
 	//Keys for returning Values to Controller
 	public final static String RETURN_NAME = "DefaultName";
 	public final static String RETURN_GALLARY = "gallary";
+	public final static String RETURN_BACK = "back";
 
 	//Keys for receiving Values from Controller
 	public final static String PARAMS_NAME = "DefaultName";
@@ -35,18 +38,26 @@ public class PlayernameActivity extends Activity {
 	
 	public void start(){
 		
+		returnParams.addParameter(RETURN_GALLARY, true);
 		
+		setLayout(null);
 		
 		
 		//Buttons declaration
-		JButton gallaryB = new JButton("Gallary");
-		gallaryB.setBounds(100, 100 , 250, 100 );
-		JButton ownPicB = new JButton("Use own Picture");
-		ownPicB.setBounds(100, 250 , 250, 100 );
-		JButton backB = new JButton(new ImageIcon(PicsMapper.OKAY_BUTTON));
-		backB.setBounds(280, 450 , 250, 100 );
+		ImageButton gallaryB = new ImageButton(PicsMapper.GALLERY_BUTTON);
+		gallaryB.setBounds(150, 150 , 250, 100 );
+		ImageButton ownPicB = new ImageButton(PicsMapper.OWN_PICS);
+		ownPicB.setBounds(420, 145 , 250, 100 );
+		ImageButton backB = new ImageButton(PicsMapper.BLACK_BACK_BUTTON);
+		backB.setBounds(150, 450 , 300, 300 );
 		//Label declaration
 		JLabel nameL = new JLabel("Enter your name: ");
+		nameL.setBounds(250, 50 , 200, 20);
+		ImageButton howto = new ImageButton(PicsMapper.TEXT_HOW_TO);
+		howto.setBounds(500, 280 , 600, 600);
+		
+		playerName.setBounds(350, 50, 200, 20);
+		
 		
 		
 		//If player name is null it's setting it to a Default
@@ -60,18 +71,16 @@ public class PlayernameActivity extends Activity {
 		
 		
 		//Layout declaration
-		JPanel enterName = new JPanel();
-		JPanel Buttons = new JPanel();
+
 		
-		enterName.add(nameL);
-		enterName.add(playerName);
+		add(nameL);
+		add(playerName);
 		
-		Buttons.add(gallaryB);
-		Buttons.add(ownPicB);
+		add(gallaryB);
+		add(ownPicB);
 		
+		add(howto);
 		
-		add(enterName);
-		add(Buttons);
 		add(backB);
 		
 		
@@ -80,10 +89,8 @@ public class PlayernameActivity extends Activity {
 			
 			
 			public void actionPerformed(ActionEvent e) {
-			
-				returnParams.addParameter(RETURN_GALLARY, true);
+				returnParams.addParameter(RETURN_BACK, false);
 				returnName();	
-				
 			}
 		});
 		
@@ -93,6 +100,7 @@ public class PlayernameActivity extends Activity {
 			public void actionPerformed(ActionEvent e) {
 			
 				returnParams.addParameter(RETURN_GALLARY, false);
+				returnParams.addParameter(RETURN_BACK, false);
 				returnName();
 				
 			}
@@ -101,10 +109,9 @@ public class PlayernameActivity extends Activity {
 		//Button to get Back
 		backB.addActionListener(new ActionListener() {
 			
-			
 			public void actionPerformed(ActionEvent e) {
-				returnData();
-				
+				returnParams.addParameter(RETURN_BACK, true);
+				returnName();
 			}
 		});
 		

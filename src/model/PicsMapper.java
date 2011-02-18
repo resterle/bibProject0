@@ -2,7 +2,7 @@ package model;
 
 public class PicsMapper {
 	
-	private static String path = "pics/";
+	private static String path = "Pics/";
 	
 	public static final String BACKGROUND = path+"background/puzzle.png";
 	
@@ -62,7 +62,8 @@ public class PicsMapper {
 	public static final String TEXT_AYS = path+"text/ays.png";
 	public static final String TEXT_HIGHSCORE = path+"text/text_Highscore.png";
 	public static final String TEXT_LOADING = path+"text/text_loading.png";
-	public static final String TEXT_HOW_TO = path+"text/text_how_to.png";
+	public static final String TEXT_HOW_TO = path+"text/text_howto.png";
+	public static final String TEXT_WIN = path+"text/text_win.png";
 
 		
 }

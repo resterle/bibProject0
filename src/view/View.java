@@ -50,6 +50,7 @@ public class View extends JFrame{
 	
 	public void startActivity(Activity activity, ParameterList params){
 		
+		activity.removeAll();
 		activity.run(params);
 		mainCon.removeAll();
 		mainCon.add(activity);

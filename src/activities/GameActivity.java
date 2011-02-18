@@ -17,12 +17,15 @@ import controller.Controller;
 import view.Activity;
 import view.ImageButton;
 
+// This class manage all the components for the game.
+
 public class GameActivity extends Activity {
 	
 	public static final String PARAMS_PIC = "pic";
 	public static final String PARAMS_SORT = "sort";
 	public static final String PARAMS_BLACK = "black";
 	public static final String PARAMS_NEIGHBORS = "neighbors";
+	public static final String PARAMS_TIME = "time";
 	
 	public static final String RETURN_SELECTED = "selected";
 	public static final String RETURN_SHUFFLE = "shuffle";
@@ -59,6 +62,7 @@ public class GameActivity extends Activity {
 				returnData();
 			}
 		});
+		
 		time = new JLabel("0");
 		
 		add(bilder);
@@ -76,7 +80,7 @@ public class GameActivity extends Activity {
 		buttons.setLayout(new GridLayout(1, 3));
 		
 		bilder.setBounds(0, 0, 800, 500);
-		buttons.setBounds(0, 485, 800, 100);
+		buttons.setBounds(0, 485, 800, 120);
 		
 		buttons.add(back);
 		buttons.add(mix);
@@ -90,7 +94,7 @@ public class GameActivity extends Activity {
 			final Integer r = new Integer(i);
 			ImageButton ib = null;
 			if(black==i){
-				bilder.add(new ImageButton(PicsMapper.BACKGROUND));
+				bilder.add(new JLabel());
 			}
 			else{
 				ib = new ImageButton(pics.get(sort[i]));
@@ -107,6 +111,8 @@ public class GameActivity extends Activity {
 				});
 			}
 		}
+		
+		setTime((Integer) params.getValue(PARAMS_TIME));
 	}
 	
 	public void setTime(int t){

@@ -4,33 +4,34 @@ import activities.GameActivity;
 
 public class Counter extends Thread {
 
-	private int count;
 	private GameModel m;
-	GameActivity ga;
+	private GameActivity ga;
+	private int count;
 	
 	public Counter(GameModel m, GameActivity ga){
 		this.m=m;
-		count = m.getRoundTime();
+		this.ga=ga;
+		System.out.println(m);
+	}
+	
+	public void setActivity(GameActivity ga){
+		this.ga=ga;
+		count=0;
 	}
 	
 	@Override
 	public void run() {
 		while(true){
+			 count = m.getRoundTime();
+			ga.setTime(count);
 			try {
 				Thread.sleep(999);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			count++;
-			m.setRoundTime(count);
-			System.out.println(ga);
-			ga.setTime(count);
+			m.setRoundTime(count+1);
 		}
-	}
-	
-	public int getCount(){
-		return count;
 	}
 	
 }

@@ -22,6 +22,7 @@ public class PlayernameActivity extends Activity {
 	//Keys for returning Values to Controller
 	public final static String RETURN_NAME = "DefaultName";
 	public final static String RETURN_GALLARY = "gallary";
+	public final static String RETURN_BACK = "back";
 
 	//Keys for receiving Values from Controller
 	public final static String PARAMS_NAME = "DefaultName";
@@ -36,6 +37,8 @@ public class PlayernameActivity extends Activity {
 	}
 	
 	public void start(){
+		
+		returnParams.addParameter(RETURN_GALLARY, true);
 		
 		setLayout(null);
 		
@@ -86,10 +89,8 @@ public class PlayernameActivity extends Activity {
 			
 			
 			public void actionPerformed(ActionEvent e) {
-			
-				returnParams.addParameter(RETURN_GALLARY, true);
+				returnParams.addParameter(RETURN_BACK, false);
 				returnName();	
-				
 			}
 		});
 		
@@ -99,6 +100,7 @@ public class PlayernameActivity extends Activity {
 			public void actionPerformed(ActionEvent e) {
 			
 				returnParams.addParameter(RETURN_GALLARY, false);
+				returnParams.addParameter(RETURN_BACK, false);
 				returnName();
 				
 			}
@@ -107,10 +109,9 @@ public class PlayernameActivity extends Activity {
 		//Button to get Back
 		backB.addActionListener(new ActionListener() {
 			
-			
 			public void actionPerformed(ActionEvent e) {
-				returnData();
-				
+				returnParams.addParameter(RETURN_BACK, true);
+				returnName();
 			}
 		});
 		

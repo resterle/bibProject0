@@ -113,7 +113,10 @@ public class Controller {
 					
 				// When options is clicked.
 				case MainMenuModel.OPTIONS:
-					view.startActivity(new OptionsActivity(this), null);
+					pl.addParameter(OptionsActivity.PARAMS_DIF, model.getDifficulty());
+					pl.addParameter(OptionsActivity.PARAMS_SIZE, model.getSize());
+					
+					view.startActivity(new OptionsActivity(this), pl);
 					break;
 					
 				// When credits is clicked.

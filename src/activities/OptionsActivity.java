@@ -32,6 +32,21 @@ public class OptionsActivity extends Activity {
 	
 	public void start(){
 		
+		final JRadioButton fourButton   = new JRadioButton("",false);
+		fourButton.setBounds(100, 200 , 30, 14);
+		final JRadioButton sixButton    = new JRadioButton("", false);
+		sixButton.setBounds(380, 200 , 30, 14);
+		final JRadioButton eightButton  = new JRadioButton("", false);
+		eightButton.setBounds(650, 200 , 30, 14);
+		
+		final JRadioButton easyButton   = new JRadioButton("", false);
+		easyButton.setBounds(100, 360 , 30, 14);
+		final JRadioButton normalButton = new JRadioButton("", false);
+		normalButton.setBounds(380, 360 , 30, 14);
+		final JRadioButton hardButton   = new JRadioButton("", false);
+		hardButton.setBounds(650, 360 , 30, 14);
+		
+		
 		setLayout(null);  
 		
 		//Declaration of the Button
@@ -83,12 +98,24 @@ public class OptionsActivity extends Activity {
 		hardL.setBounds(610, 341 , 100, 100 );
 		
 		//declare RadioButtons for the size
-		final JRadioButton fourButton   = new JRadioButton("",true);
-		fourButton.setBounds(100, 200 , 30, 14);
-		final JRadioButton sixButton    = new JRadioButton("", false);
-		sixButton.setBounds(380, 200 , 30, 14);
-		final JRadioButton eightButton  = new JRadioButton("", false);
-		 eightButton.setBounds(650, 200 , 30, 14);
+		switch((Integer)params.getValue(PARAMS_SIZE)){
+		
+		case 4:	fourButton.setSelected(true);
+				sixButton.setSelected(false);
+				eightButton.setSelected(false);
+				break;
+				
+		case 6: fourButton.setSelected(false);
+				sixButton.setSelected(true);
+				eightButton.setSelected(false);
+				break;
+				
+		case 8: fourButton.setSelected(false);
+				sixButton.setSelected(false);
+				eightButton.setSelected(true);
+				break;	
+		}
+		
 		
 		// Set radio buttons on the ButtonGroup 
 		final ButtonGroup sizeRB = new ButtonGroup();
@@ -96,13 +123,25 @@ public class OptionsActivity extends Activity {
 		sizeRB.add(sixButton);
 		sizeRB.add(eightButton);
 		
-		//declare RadioButtons for the difficulty
-		final JRadioButton easyButton   = new JRadioButton("", true);
-		easyButton.setBounds(100, 360 , 30, 14);
-		final JRadioButton normalButton = new JRadioButton("", false);
-		normalButton.setBounds(380, 360 , 30, 14);
-		final JRadioButton hardButton   = new JRadioButton("", false);
-		hardButton.setBounds(650, 360 , 30, 14);
+		//declare RadioButtons for the difficulty		
+		switch((Integer)params.getValue(PARAMS_DIF)){
+		
+		case 25:easyButton.setSelected(true);
+				normalButton.setSelected(false);
+				hardButton.setSelected(false);
+				break;
+				
+		case 50:easyButton.setSelected(false);
+				normalButton.setSelected(true);
+				hardButton.setSelected(false);
+				break;
+				
+		case 200:easyButton.setSelected(false);
+				normalButton.setSelected(false);
+				hardButton.setSelected(true);
+				break;
+		}
+		
 
 		// Set radio buttons on the ButtonGroup 		 
 		final ButtonGroup diffRB = new ButtonGroup();

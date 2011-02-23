@@ -30,7 +30,7 @@ public class WonActivity extends Activity {
 		setLayout(null);
 		
 		ImageButton won = new ImageButton(PicsMapper.TEXT_WIN);
-		won.setBounds(200, 50, 300, 300);
+		won.setBounds(150, 50, 500, 200);
 		
 		//A JLabel for the username and time needed to win
 		JLabel youWonL = new JLabel("You won " + params.getValue(PARAMS_NAME) + ". You made it in " + params.getValue(PARAMS_TIME) + " seconds!");

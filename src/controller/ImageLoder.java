@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 import model.GalleryModel;
-import view.ParameterList;
+import model.ParameterList;
 
 public class ImageLoder extends Thread{
 	

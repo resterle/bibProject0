@@ -4,12 +4,12 @@ import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 
+import model.ParameterList;
 import model.PicsMapper;
 
 import controller.Controller;
 import view.Activity;
 import view.ImageButton;
-import view.ParameterList;
 
 public class LoadingActivity extends Activity{
 	

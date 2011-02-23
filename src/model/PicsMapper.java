@@ -63,7 +63,7 @@ public class PicsMapper {
 	public static final String TEXT_HIGHSCORE = path+"text/text_Highscore.png";
 	public static final String TEXT_LOADING = path+"text/text_loading.png";
 	public static final String TEXT_HOW_TO = path+"text/text_howto.png";
-	public static final String TEXT_WIN = path+"text/text_win.png";
+	public static final String TEXT_WIN = path+"text/win.png";
 
 		
 }

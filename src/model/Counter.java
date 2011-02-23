@@ -11,7 +11,6 @@ public class Counter extends Thread {
 	public Counter(GameModel m, GameActivity ga){
 		this.m=m;
 		this.ga=ga;
-		System.out.println(m);
 	}
 	
 	public void setActivity(GameActivity ga){

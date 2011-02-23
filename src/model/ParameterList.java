@@ -1,4 +1,4 @@
-package view;
+package model;
 
 import java.util.ArrayList;
 import java.util.ListIterator;

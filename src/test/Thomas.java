@@ -9,8 +9,8 @@ import activities.WonActivity;
 
 import model.GalleryModel;
 import model.GameModel;
+import model.ParameterList;
 import model.PicsMapper;
-import view.ParameterList;
 import view.View;
 import controller.Controller;
 

@@ -3,13 +3,18 @@ package activities;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageFilter;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileFilter;
 
 import model.PicsMapper;
+import model.Utils;
 
 import controller.Controller;
 import view.Activity;
@@ -25,47 +30,69 @@ public class ChoosePicActivity extends Activity {
 	public final static String RETURN_PATH = "path";
 	
 	//Text Field with the length of 30 chars
-	JTextField playerName = new JTextField(30);
+	//JTextField playerName = new JTextField(30);
 	
 	public void start() {
 		
 		
 		setLayout(null);
 		
-		playerName.setBounds(380, 200, 300, 20);
+		//playerName.setBounds(380, 200, 300, 20);
 		
 		//Declaration of the "OK" Button
 		ImageButton okayB = new ImageButton(PicsMapper.OKAY_BUTTON);
-		okayB.setBounds(275, 450 , 250, 100 );
+		okayB.setBounds(200, 200 , 250, 100 );
 		
 		//JLabel declaration
-		JLabel nameL = new JLabel("Enter the path of the picture: ");
-		nameL.setFont(new Font("Times New Roman",1,20));
-		nameL.setBounds(130, 200, 300, 20);
+		//JLabel nameL = new JLabel("Enter the path of the picture: ");
+		final JFileChooser jfc = new JFileChooser();
+		jfc.setFileFilter(new FileFilter() {
+			
+			@Override
+			public String getDescription() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public boolean accept(File f) {
+				if (f.isDirectory()) {
+					return true;
+				    }
+
+				    String extension = Utils.getExtension(f);
+				    if (extension != null) {
+					if (extension.equals(Utils.tiff) ||
+					    extension.equals(Utils.tif) ||
+					    extension.equals(Utils.gif) ||
+					    extension.equals(Utils.jpeg) ||
+					    extension.equals(Utils.jpg) ||
+					    extension.equals(Utils.png)) {
+					        return true;
+					} else {
+					    return false;
+					}
+				    }
+
+				    return false;
+
+			}
+		});
+		//nameL.setFont(new Font("Times New Roman",1,20));
+		jfc.setBounds(50, 50, 700, 500);
 				
 		
 		//Layout declaration
-		add(nameL);
-		add(playerName);
+		add(jfc);
 		
-		add(okayB);
-		
-		
-		//Action Listener to return the Value of the TextFiel to the Controller as soon as the "OK" Button is pressed
-		okayB.addActionListener(new ActionListener() {
-			
-			
-			public void actionPerformed(ActionEvent e) {
-			
-				returnParams.addParameter(RETURN_PATH, playerName.getText());	
-				returnData();
-				
-			}
-		});
-		
-		
+		if (jfc.showOpenDialog(this) == JFileChooser.OPEN_DIALOG){
+		System.out.println(jfc.getSelectedFile().toString());
+		returnParams.addParameter(RETURN_PATH, jfc.getSelectedFile().toString());
+		returnData();
+		}
 		
 		
 	}
+		
 
 }

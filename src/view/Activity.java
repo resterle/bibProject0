@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.ParameterList;
 import model.PicsMapper;
 
 import controller.Controller;

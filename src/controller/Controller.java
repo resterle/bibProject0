@@ -25,13 +25,13 @@ import activities.OptionsActivity;
 import activities.PlayernameActivity;
 import activities.QuitActivity;
 import activities.WonActivity;
-import view.ParameterList;
 import view.View;
 import model.Counter;
 import model.GalleryModel;
 import model.GameModel;
 import model.Highscore;
 import model.MainMenuModel;
+import model.ParameterList;
 
 public class Controller {
 	
@@ -43,6 +43,8 @@ public class Controller {
 	
 	// Model for the Gallery Activity.
 	private GalleryModel galleryModel;
+	
+	// Counter to count the time.
 	private Counter counter;
 	private GameActivity gameActivity;
 	
@@ -150,9 +152,7 @@ public class Controller {
 		
 		// If PlayernameActivity returns data.
 		else if(activityClass.equals(PlayernameActivity.class.getSimpleName())){
-			
 			model.setPlayerName((String) params.getValue(PlayernameActivity.RETURN_NAME));
-			System.out.println((Boolean) params.getValue(PlayernameActivity.RETURN_BACK));
 			if((Boolean) params.getValue(PlayernameActivity.RETURN_BACK))
 				start();
 			else if((Boolean) params.getValue(PlayernameActivity.RETURN_GALLARY)){
@@ -171,9 +171,9 @@ public class Controller {
 		else if(activityClass.equals(ChoosePicActivity.class.getSimpleName())){
 			try {
 				pl.addParameter(LoadingActivity.PARAM_MESSAGE, "Loading Image");
-				view.startActivity(new LoadingActivity(this), pl);
+				//view.startActivity(new LoadingActivity(this), pl);
 				Image image = ImageIO.read(new File((String) params.getValue(ChoosePicActivity.RETURN_PATH)));
-				model.setImage(Graphics.subImage(image, model.getSize(), 700, 400));
+				model.setImage(Graphics.subImage(Graphics.scale(image, 800, 600), model.getSize(), 700, 400));
 				startGame();
 			} catch (IOException e) {
 				view.startActivity(new MenuActivity(this), null);

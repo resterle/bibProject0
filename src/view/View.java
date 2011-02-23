@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import model.ParameterList;
 import model.PicsMapper;
 
 public class View extends JFrame{

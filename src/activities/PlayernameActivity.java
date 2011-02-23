@@ -3,6 +3,7 @@ package activities;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -10,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 import model.PicsMapper;
 
@@ -38,10 +40,7 @@ public class PlayernameActivity extends Activity {
 	
 	public void start(){
 		
-		returnParams.addParameter(RETURN_GALLARY, true);
-		
 		setLayout(null);
-		
 		
 		//Buttons declaration
 		ImageButton gallaryB = new ImageButton(PicsMapper.GALLERY_BUTTON);
@@ -89,6 +88,7 @@ public class PlayernameActivity extends Activity {
 			
 			
 			public void actionPerformed(ActionEvent e) {
+				returnParams.addParameter(RETURN_GALLARY, true);
 				returnParams.addParameter(RETURN_BACK, false);
 				returnName();	
 			}
